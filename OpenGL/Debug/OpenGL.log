@@ -1,0 +1,3 @@
+﻿  Cube.cpp
+C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Cube.cpp(55,17): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  OpenGL.vcxproj -> C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\Debug\OpenGL.exe
