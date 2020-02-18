@@ -2,13 +2,13 @@
 #include <fstream>
 #include <iostream>
 
-Vertex* Cube::indexedVertices = nullptr;
-Color* Cube::indexedColors = nullptr;
-GLushort* Cube::indices = nullptr;
-
-int Cube::numVertices;
-int Cube::numColors;
-int Cube::numIndices;
+//Vertex* Cube::indexedVertices = nullptr;
+//Color* Cube::indexedColors = nullptr;
+//GLushort* Cube::indices = nullptr;
+//
+//int Cube::numVertices;
+//int Cube::numColors;
+//int Cube::numIndices;
 
 bool Cube::Load(char* path)
 {
@@ -20,37 +20,18 @@ bool Cube::Load(char* path)
 		return false;
 	}
 
-	inFile >> numVertices;
-	indexedVertices = new Vertex[numVertices];
-	for (int i = 0; i < numVertices; i++)
-	{
-		inFile >> indexedVertices[i].x;
-		inFile >> indexedVertices[i].y;
-		inFile >> indexedVertices[i].z;
-	}
+	
 
-	inFile >> numColors;
-	indexedColors = new Color[numColors];
-	for (int i = 0; i < numColors; i++)
-	{
-		inFile >> indexedColors[i].r;
-		inFile >> indexedColors[i].g;
-		inFile >> indexedColors[i].b;
-	}
+	
 
-	inFile >> numIndices;
-	indices = new GLushort[numIndices];
-	for (int i = 0; i < numIndices; i++)
-	{
-		inFile >> indices[i];
-	}
+	
 
 	inFile.close();
 
 	return true;
 }
 
-Cube::Cube(float x, float y, float z)
+Cube::Cube(Mesh* mesh, float x, float y, float z)
 {
 	rotation = rand();
 
@@ -66,7 +47,7 @@ Cube::~Cube()
 
 void Cube::Draw()
 {
-	if (indexedVertices != nullptr && indexedColors != nullptr && indices != nullptr)
+	if (mesh->Vertices != nullptr && mesh->Colors != nullptr && mesh->Indices != nullptr)
 	{
 		glPushMatrix();
 
@@ -77,8 +58,8 @@ void Cube::Draw()
 		glBegin(GL_TRIANGLES);
 		for (int i = 0; i < 36; i++)
 		{
-			glColor3fv(&indexedColors[indices[i]].r);
-			glVertex3fv(&indexedVertices[indices[i]].x);
+			glColor3fv(&mesh->Colors[mesh->Indices[i]].r);
+			glVertex3fv(&mesh->Vertices[mesh->Indices[i]].x);
 		}
 		glEnd();
 

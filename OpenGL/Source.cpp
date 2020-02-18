@@ -1,11 +1,16 @@
 #include "Source.h"
+#include "Structures.h"
 #include "GLUTCallbacks.h"
-
-
+#include "MeshLoader.h"
+#include <iostream>
 
 
 int main(int argc, char* argv[]) 
 {
+	Vector3 cameraPosition;
+	cameraPosition.x = 0.0f;
+	cameraPosition.y = 0.0f;
+	cameraPosition.z = 0.0f;
 	Source* game = new Source(argc, argv);
 	return 0;
 }
@@ -14,17 +19,16 @@ Source::Source(int argc, char* argv[])
 {
 	//sets up camera
 	camera = new Camera();
-	camera->eye.x = 5.0f; camera->eye.y = 5.0f; camera->eye.z = -25.0f;
-	camera->center.x = 0.0f; camera->center.y = 0.0f; camera->center.z = -15.0f;
-	camera->up.x = 0.0f; camera->up.y = 1.0f; camera->up.z = -15.0f;
+	camera->eye.x = cameraPosition.x + 5.0f;		camera->eye.y = cameraPosition.y + 5.0f;			camera->eye.z = cameraPosition.z + -15.0f;
+	camera->center.x = cameraPosition.x + 0.0f;		camera->center.y = cameraPosition.y + 0.0f;			camera->center.z = cameraPosition.z + 0.0f;
+	camera->up.x = cameraPosition.x + 0.0f;			camera->up.y = cameraPosition.y + 1.0f;				camera->up.z = cameraPosition.z + 0.0f;
 
-	Cube::Load((char*)"cube.txt");
+	//Cube::Load((char*)"cube.txt");
+	Mesh* cubeMesh = MeshLoader::Load("cube.txt");
 	for (int i = 0; i < 200; i++)
 	{
-		cube[i] = new Cube(((rand() % 400) / 10.0f) - 20.0f, ((rand() % 200) / 10.0f) - 10.0f, -(rand() % 1000) / 10.0f);
-
+		cube[i] = new Cube(cubeMesh, ((rand() % 400) / 10.0f) - 20.0f, ((rand() % 200) / 10.0f) - 10.0f, -(rand() % 1000) / 10.0f);
 	}
-
 
 	GLUTCallbacks::Init(this);
 	glutInit(&argc, argv);
@@ -72,13 +76,22 @@ void Source::Keyboard(unsigned char key, int x, int y)
 {
 	if (key == 'd')
 	{
-		for (int i = 0; i < 200; i++)
-		{
-			cube[i]->SetRotation(1.0f);
-
-		}
-
+		cameraPosition.x++;
 	}
+	else if (key == 'a')
+	{
+		cameraPosition.x--;
+	}
+	else if (key == 'w')
+	{
+		cameraPosition.z++;
+	}
+	else if (key == 's')
+	{
+		cameraPosition.z--;
+	}
+
+	std::cout << "X: " << cameraPosition.x << " Y: " << cameraPosition.y << " Z: " << cameraPosition.z << std::endl;
 }
 
 void Source::Update()
@@ -90,10 +103,14 @@ void Source::Update()
 	glutPostRedisplay();
 	for (int i = 0; i < 200; i++)
 	{
-		cube[i]->SetRotation(1.0f);
+		//cube[i]->SetRotation(1.0f);
 	}
 
 	Sleep(10);
+
+	camera->eye.x =		cameraPosition.x + 5.0f;	camera->eye.y = cameraPosition.y + 5.0f;		camera->eye.z = cameraPosition.z + -25.0f;
+	camera->center.x =	cameraPosition.x + 0.0f;	camera->center.y = cameraPosition.y + 0.0f;		camera->center.z = cameraPosition.z + -15.0f;
+	camera->up.x =		cameraPosition.x + 0.0f;	camera->up.y = cameraPosition.y + 1.0f;			camera->up.z = cameraPosition.z + -15.0f;
 }
 
 void Source::DrawCubeArray() 
@@ -123,4 +140,12 @@ void Source::Display()
 
 	glFlush();
 	glutSwapBuffers();
+}
+
+void Source::InitObjects()
+{
+}
+
+void Source::InitGL(int argc, char* argv[])
+{
 }

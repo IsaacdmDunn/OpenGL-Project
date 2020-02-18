@@ -10,13 +10,7 @@ class Cube
 {
 private:
 	
-	static Vertex* indexedVertices;
-	static Color* indexedColors;
-	static GLushort* indices;
-	
-	static int numVertices, numColors, numIndices;
-
-	
+	Mesh* mesh;
 
 	Vector3 _position;
 	float x, y, z;
@@ -25,7 +19,7 @@ protected:
 	
 
 public:
-	Cube(float x, float y, float z);
+	Cube(Mesh* mesh, float x, float y, float z);
 	~Cube();
 	float rotation;
 	static bool Load(char* path);

@@ -15,9 +15,14 @@ public:
 	void Keyboard(unsigned char key, int x, int y);
 	void Display();
 
+	void InitObjects();
+	void InitGL(int argc, char* argv[]);
+
 private:
 	Camera* camera;
 	Cube* cube[200];
+
+	Vector3 cameraPosition;
 
 	void DrawCubeArray();
 	void DrawIndexedCube();

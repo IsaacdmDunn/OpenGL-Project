@@ -125,12 +125,14 @@
   <ItemGroup>
     <ClInclude Include="Cube.h" />
     <ClInclude Include="GLUTCallbacks.h" />
+    <ClInclude Include="MeshLoader.h" />
     <ClInclude Include="Source.h" />
     <ClInclude Include="Structures.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cube.cpp" />
     <ClCompile Include="GLUTCallbacks.cpp" />
+    <ClCompile Include="MeshLoader.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
