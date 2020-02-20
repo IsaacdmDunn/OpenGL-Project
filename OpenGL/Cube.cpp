@@ -20,12 +20,6 @@ bool Cube::Load(char* path)
 		return false;
 	}
 
-	
-
-	
-
-	
-
 	inFile.close();
 
 	return true;
@@ -34,6 +28,7 @@ bool Cube::Load(char* path)
 Cube::Cube(Mesh* mesh, float x, float y, float z)
 {
 	rotation = rand();
+	_mesh = mesh;
 
 	_position.x = x;
 	_position.y = y;
@@ -47,7 +42,7 @@ Cube::~Cube()
 
 void Cube::Draw()
 {
-	if (mesh->Vertices != nullptr && mesh->Colors != nullptr && mesh->Indices != nullptr)
+	if (_mesh->Vertices != nullptr && _mesh->Colors != nullptr && _mesh->Indices != nullptr)
 	{
 		glPushMatrix();
 
@@ -58,8 +53,8 @@ void Cube::Draw()
 		glBegin(GL_TRIANGLES);
 		for (int i = 0; i < 36; i++)
 		{
-			glColor3fv(&mesh->Colors[mesh->Indices[i]].r);
-			glVertex3fv(&mesh->Vertices[mesh->Indices[i]].x);
+			glColor3fv(&_mesh->Colors[_mesh->Indices[i]].r);
+			glVertex3fv(&_mesh->Vertices[_mesh->Indices[i]].x);
 		}
 		glEnd();
 

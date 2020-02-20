@@ -17,18 +17,7 @@ int main(int argc, char* argv[])
 
 Source::Source(int argc, char* argv[])
 {
-	//sets up camera
-	camera = new Camera();
-	camera->eye.x = cameraPosition.x + 5.0f;		camera->eye.y = cameraPosition.y + 5.0f;			camera->eye.z = cameraPosition.z + -15.0f;
-	camera->center.x = cameraPosition.x + 0.0f;		camera->center.y = cameraPosition.y + 0.0f;			camera->center.z = cameraPosition.z + 0.0f;
-	camera->up.x = cameraPosition.x + 0.0f;			camera->up.y = cameraPosition.y + 1.0f;				camera->up.z = cameraPosition.z + 0.0f;
-
-	//Cube::Load((char*)"cube.txt");
-	Mesh* cubeMesh = MeshLoader::Load("cube.txt");
-	for (int i = 0; i < 200; i++)
-	{
-		cube[i] = new Cube(cubeMesh, ((rand() % 400) / 10.0f) - 20.0f, ((rand() % 200) / 10.0f) - 10.0f, -(rand() % 1000) / 10.0f);
-	}
+	
 
 	GLUTCallbacks::Init(this);
 	glutInit(&argc, argv);
@@ -62,7 +51,22 @@ Source::Source(int argc, char* argv[])
 	glEnable(GL_CULL_FACE);
 	glCullFace(GL_BACK);
 
+	//sets up camera
+	camera = new Camera();
+	camera->eye.x = cameraPosition.x + 5.0f;		camera->eye.y = cameraPosition.y + 5.0f;			camera->eye.z = cameraPosition.z + -15.0f;
+	camera->center.x = cameraPosition.x + 0.0f;		camera->center.y = cameraPosition.y + 0.0f;			camera->center.z = cameraPosition.z + 0.0f;
+	camera->up.x = cameraPosition.x + 0.0f;			camera->up.y = cameraPosition.y + 1.0f;				camera->up.z = cameraPosition.z + 0.0f;
+
+	//Cube::Load((char*)"cube.txt");
+	Mesh* cubeMesh = MeshLoader::Load((char*)"Cube.txt");
+	for (int i = 0; i < 200; i++)
+	{
+		cube[i] = new Cube(cubeMesh, ((rand() % 400) / 10.0f) - 20.0f, ((rand() % 200) / 10.0f) - 10.0f, -(rand() % 1000) / 10.0f);
+	}
+
 	glutMainLoop();
+
+
 };
 
 

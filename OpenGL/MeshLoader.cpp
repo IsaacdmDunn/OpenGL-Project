@@ -64,7 +64,9 @@ namespace MeshLoader
 			return nullptr;
 		}
 
-		//LOAD DATA USING METHODS ABOVE
+		LoadVertices(inFile, * mesh);
+		LoadColours(inFile, *mesh);
+		LoadIndices(inFile, * mesh);
 
 		return mesh;
 	}

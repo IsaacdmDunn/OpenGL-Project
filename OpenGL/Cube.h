@@ -10,7 +10,7 @@ class Cube
 {
 private:
 	
-	Mesh* mesh;
+	Mesh* _mesh;
 
 	Vector3 _position;
 	float x, y, z;
