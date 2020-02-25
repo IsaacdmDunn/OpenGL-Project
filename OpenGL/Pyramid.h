@@ -8,7 +8,7 @@
 #include "SceneObject.h"
 #include "Texture2D.h"
 
-class Cube : public SceneObject
+class Pyramid : public SceneObject
 {
 private:
 
@@ -16,14 +16,15 @@ private:
 	float x, y, z;
 
 protected:
-	
+
 
 public:
-	Cube(Mesh* mesh, Texture2D* _texture, float x, float y, float z);
-	~Cube();
+	Pyramid(Mesh* mesh, float x, float y, float z);
+	~Pyramid();
 	float rotation;
 	static bool Load(char* path);
 	void Draw();
 	void Update();
 	void SetRotation(GLfloat newRotation);
 };
+

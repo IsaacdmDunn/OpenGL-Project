@@ -1,8 +1,2 @@
-﻿  Cube.cpp
-C:\Users\d012751j\Documents\GitHub\OpenGL-Project\OpenGL\Cube.cpp(30): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-  GLUTCallbacks.cpp
-  Source.cpp
-C:\Users\d012751j\Documents\GitHub\OpenGL-Project\OpenGL\Source.cpp(76): warning C4156: deletion of an array expression without using the array form of 'delete'; array form substituted
-C:\Users\d012751j\Documents\GitHub\OpenGL-Project\OpenGL\Source.cpp(76): warning C4154: deletion of an array expression; conversion to pointer supplied
-  Generating Code...
-  OpenGL.vcxproj -> C:\Users\d012751j\Documents\GitHub\OpenGL-Project\OpenGL\Debug\OpenGL.exe
+﻿  Texture2D.cpp
+  OpenGL.vcxproj -> C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\Debug\OpenGL.exe

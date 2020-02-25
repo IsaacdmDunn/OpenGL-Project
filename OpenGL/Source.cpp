@@ -24,9 +24,7 @@ Source::Source(int argc, char* argv[])
 	glutInitDisplayMode(GLUT_DOUBLE);
 	glutInitWindowSize(800, 800);
 	glutInitWindowPosition(100, 100);
-
 	glutInitDisplayMode(GLUT_RGB | GLUT_DEPTH);
-
 	glutCreateWindow("OpenGL Program");
 
 	glEnable(GL_DEPTH_TEST);
@@ -48,7 +46,12 @@ Source::Source(int argc, char* argv[])
 	glMatrixMode(GL_MODELVIEW);
 
 	//culls the back face of objects
+	glEnable(GL_TEXTURE_2D);
+	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_CULL_FACE);
+	glEnable(GL_LIGHTING);
+	glEnable(GL_LIGHT0);
+
 	glCullFace(GL_BACK);
 
 	//sets up camera
@@ -59,9 +62,18 @@ Source::Source(int argc, char* argv[])
 
 	//Cube::Load((char*)"cube.txt");
 	Mesh* cubeMesh = MeshLoader::Load((char*)"Cube.txt");
-	for (int i = 0; i < 200; i++)
+	Mesh* pyramidMesh = MeshLoader::Load((char*)"pyramid.txt");
+
+	Texture2D* texture = new Texture2D();
+	texture->Load((char*)"Penguins.raw", 512, 512);
+
+	for (int i = 0; i < 500; i++)
 	{
-		cube[i] = new Cube(cubeMesh, ((rand() % 400) / 10.0f) - 20.0f, ((rand() % 200) / 10.0f) - 10.0f, -(rand() % 1000) / 10.0f);
+		objects[i] = new Cube(cubeMesh, texture, ((rand() % 800) / 10.0f) - 20.0f, ((rand() % 500) / 10.0f) - 10.0f, -(rand() % 1500) / 10.0f);
+	}
+	for (int i = 500; i < 1000; i++)
+	{
+		objects[i] = new Pyramid(pyramidMesh, ((rand() % 600) / 10.0f) - 20.0f, ((rand() % 300) / 10.0f) - 10.0f, -(rand() % 1500) / 10.0f);
 	}
 
 	glutMainLoop();
@@ -73,7 +85,7 @@ Source::Source(int argc, char* argv[])
 Source::~Source()
 {
 	delete camera;
-	delete cube;
+	delete objects;
 }
 
 void Source::Keyboard(unsigned char key, int x, int y)
@@ -105,9 +117,9 @@ void Source::Update()
 
 
 	glutPostRedisplay();
-	for (int i = 0; i < 200; i++)
+	for (int i = 0; i < 1000; i++)
 	{
-		//cube[i]->SetRotation(1.0f);
+		//objects[i]->SetRotation(1.0f);
 	}
 
 	Sleep(10);
@@ -132,11 +144,9 @@ void Source::Display()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	glPushMatrix();
-	for (int i = 0; i < 200; i++)
+	for (int i = 0; i < 1000; i++)
 	{
-		
-
-		cube[i]->Draw();
+		objects[i]->Draw();
 
 	}
 

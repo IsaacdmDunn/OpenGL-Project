@@ -11,6 +11,8 @@ namespace MeshLoader
 	void LoadColours(ifstream& inFile, Mesh& mesh);
 	void LoadIndices(ifstream& inFile, Mesh& mesh);
 
+	void LoadTextureCoords(ifstream& inFile, Mesh& mesh);
+
 	void LoadVertices(ifstream& inFile, Mesh& mesh)
 	{
 		inFile >> mesh.VertexCount;
@@ -50,6 +52,15 @@ namespace MeshLoader
 		}
 	}
 
+	void LoadTextureCoords(ifstream& inFile, Mesh& mesh) {
+		inFile >> mesh.TexCoordCount;
+		mesh.TexCoords = new TexCoord[mesh.TexCoordCount];
+		for (int i = 0; i < mesh.TexCoordCount; i++) {
+			inFile >> mesh.TexCoords[i].u;
+			inFile >> mesh.TexCoords[i].v;
+		}
+	}
+
 	Mesh* MeshLoader::Load(char* path)
 	{
 		Mesh* mesh = new Mesh();
@@ -66,6 +77,7 @@ namespace MeshLoader
 
 		LoadVertices(inFile, * mesh);
 		LoadColours(inFile, *mesh);
+		LoadTextureCoords(inFile, *mesh);
 		LoadIndices(inFile, * mesh);
 
 		return mesh;

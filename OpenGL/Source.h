@@ -3,6 +3,7 @@
 #include "Structures.h"
 
 #include "Cube.h"
+#include "Pyramid.h"
 
 #define REFRESH_RATE 16
 
@@ -20,7 +21,7 @@ public:
 
 private:
 	Camera* camera;
-	Cube* cube[200];
+	SceneObject* objects[1000];
 
 	Vector3 cameraPosition;
 
