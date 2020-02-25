@@ -2,7 +2,7 @@
 #include <fstream>
 #include "Texture2D.h"
 
-using namespace::std;
+using namespace std;
 
 Texture2D::Texture2D()
 {
@@ -27,7 +27,7 @@ bool Texture2D::Load(char* path, int width, int height)
 
 	infile.seekg(0, ios::end);
 	fileSize = (int)infile.tellg();
-	tempTextureData = new char(fileSize);
+	tempTextureData = new char[fileSize];
 	infile.seekg(0, ios::beg);
 	infile.read(tempTextureData, fileSize);
 	infile.close();
@@ -36,8 +36,8 @@ bool Texture2D::Load(char* path, int width, int height)
 
 	glGenTextures(1, &_ID);
 	glBindTexture(GL_TEXTURE_2D, _ID);
-	glTexImage2D(GL_TEXTURE_2D, 0, 3, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, tempTextureData);
-	//gluBuild2DMipmaps(GL_TEXTURE_2D, 3, width, height, GL_RGB, GL_UNSIGNED_BYTE, tempTextureData);
+	//glTexImage2D(GL_TEXTURE_2D, 0, 3, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, tempTextureData);
+	gluBuild2DMipmaps(GL_TEXTURE_2D, 3, width, height, GL_RGB, GL_UNSIGNED_BYTE, tempTextureData);
 
 	delete[] tempTextureData;
 

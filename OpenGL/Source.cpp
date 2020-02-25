@@ -49,8 +49,8 @@ Source::Source(int argc, char* argv[])
 	glEnable(GL_TEXTURE_2D);
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_CULL_FACE);
-	glEnable(GL_LIGHTING);
-	glEnable(GL_LIGHT0);
+	/*glEnable(GL_LIGHTING);
+	glEnable(GL_LIGHT0);*/
 
 	glCullFace(GL_BACK);
 
@@ -67,14 +67,14 @@ Source::Source(int argc, char* argv[])
 	Texture2D* texture = new Texture2D();
 	texture->Load((char*)"Penguins.raw", 512, 512);
 
-	for (int i = 0; i < 500; i++)
+	for (int i = 0; i < 1000; i++)
 	{
 		objects[i] = new Cube(cubeMesh, texture, ((rand() % 800) / 10.0f) - 20.0f, ((rand() % 500) / 10.0f) - 10.0f, -(rand() % 1500) / 10.0f);
 	}
-	for (int i = 500; i < 1000; i++)
-	{
-		objects[i] = new Pyramid(pyramidMesh, ((rand() % 600) / 10.0f) - 20.0f, ((rand() % 300) / 10.0f) - 10.0f, -(rand() % 1500) / 10.0f);
-	}
+	//for (int i = 500; i < 1000; i++)
+	//{
+	//	objects[i] = new Pyramid(pyramidMesh, ((rand() % 600) / 10.0f) - 20.0f, ((rand() % 300) / 10.0f) - 10.0f, -(rand() % 1500) / 10.0f);
+	//}
 
 	glutMainLoop();
 
