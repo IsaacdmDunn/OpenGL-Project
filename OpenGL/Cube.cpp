@@ -33,7 +33,7 @@ Cube::~Cube()
 
 void Cube::Draw()
 {
-	if (_mesh->Vertices != nullptr && _mesh->Colors != nullptr && _mesh->Indices != nullptr)
+	if (_mesh->Vertices != nullptr && _mesh->Normals != nullptr && _mesh->Indices != nullptr)
 	{
 		glBindTexture(GL_TEXTURE_2D, _texture->GetID());
 		glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
@@ -51,6 +51,7 @@ void Cube::Draw()
 		{
 			glTexCoord2fv(&_mesh->TexCoords[_mesh->Indices[i]].u);
 			//glColor3fv(&_mesh->Colors[_mesh->Indices[i]].r);
+			glNormal3f(_mesh->Normals[i].normal.x, _mesh->Normals[i].normal.y, _mesh->Normals[i].normal.z);
 			glVertex3fv(&_mesh->Vertices[_mesh->Indices[i]].x);
 		}
 		glEnd();

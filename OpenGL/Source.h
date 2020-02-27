@@ -18,14 +18,14 @@ public:
 
 	void InitObjects();
 	void InitGL(int argc, char* argv[]);
+	void InitLighting();
 
 private:
 	Camera* camera;
 	SceneObject* objects[1000];
 
 	Vector3 cameraPosition;
-
-	void DrawCubeArray();
-	void DrawIndexedCube();
+	Vector4* _lightPosition;
+	Lighting* _lightData;
 };
 

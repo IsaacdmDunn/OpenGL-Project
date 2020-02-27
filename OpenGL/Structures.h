@@ -33,9 +33,9 @@ struct Camera
 	Vector3 up;
 };
 
-struct Color
+struct Normals
 {
-	GLfloat r, g, b;
+	Vector3 normal;
 };
 
 struct Vertex
@@ -51,9 +51,9 @@ struct TexCoord
 struct Mesh
 {
 	Vertex* Vertices;
-	Color* Colors;
+	Normals* Normals;
 	GLushort* Indices;
 	TexCoord* TexCoords;
-	int VertexCount, ColorCount, IndexCount, TexCoordCount;
+	int VertexCount, NormalCount, IndexCount, TexCoordCount;
 };
 

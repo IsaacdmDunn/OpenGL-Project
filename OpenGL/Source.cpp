@@ -17,8 +17,6 @@ int main(int argc, char* argv[])
 
 Source::Source(int argc, char* argv[])
 {
-	
-
 	GLUTCallbacks::Init(this);
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE);
@@ -49,33 +47,15 @@ Source::Source(int argc, char* argv[])
 	glEnable(GL_TEXTURE_2D);
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_CULL_FACE);
-	/*glEnable(GL_LIGHTING);
-	glEnable(GL_LIGHT0);*/
+	//glEnable(GL_LIGHTING);
+	//glEnable(GL_LIGHT0);
 
 	glCullFace(GL_BACK);
 
-	//sets up camera
-	camera = new Camera();
-	camera->eye.x = cameraPosition.x + 5.0f;		camera->eye.y = cameraPosition.y + 5.0f;			camera->eye.z = cameraPosition.z + -15.0f;
-	camera->center.x = cameraPosition.x + 0.0f;		camera->center.y = cameraPosition.y + 0.0f;			camera->center.z = cameraPosition.z + 0.0f;
-	camera->up.x = cameraPosition.x + 0.0f;			camera->up.y = cameraPosition.y + 1.0f;				camera->up.z = cameraPosition.z + 0.0f;
-
-	//Cube::Load((char*)"cube.txt");
-	Mesh* cubeMesh = MeshLoader::Load((char*)"Cube.txt");
-	Mesh* pyramidMesh = MeshLoader::Load((char*)"pyramid.txt");
-
-	Texture2D* texture = new Texture2D();
-	texture->Load((char*)"Penguins.raw", 512, 512);
-
-	for (int i = 0; i < 1000; i++)
-	{
-		objects[i] = new Cube(cubeMesh, texture, ((rand() % 800) / 10.0f) - 20.0f, ((rand() % 500) / 10.0f) - 10.0f, -(rand() % 1500) / 10.0f);
-	}
-	//for (int i = 500; i < 1000; i++)
-	//{
-	//	objects[i] = new Pyramid(pyramidMesh, ((rand() % 600) / 10.0f) - 20.0f, ((rand() % 300) / 10.0f) - 10.0f, -(rand() % 1500) / 10.0f);
-	//}
-
+	InitGL(argc, argv);
+	InitObjects();
+	InitLighting();
+	
 	glutMainLoop();
 
 
@@ -114,7 +94,10 @@ void Source::Update()
 {
 	glLoadIdentity();
 	gluLookAt(camera->eye.x, camera->eye.y, camera->eye.z, camera->center.x, camera->center.y, camera->center.z, camera->up.x, camera->up.y, camera->up.z);
-
+	glLightfv(GL_LIGHT0, GL_AMBIENT, &(_lightData->Ambient.x));
+	glLightfv(GL_LIGHT0, GL_DIFFUSE, &(_lightData->Diffuse.x));
+	glLightfv(GL_LIGHT0, GL_SPECULAR, &(_lightData->Specular.x));
+	glLightfv(GL_LIGHT0, GL_POSITION, &(_lightPosition->x));
 
 	glutPostRedisplay();
 	for (int i = 0; i < 1000; i++)
@@ -127,16 +110,6 @@ void Source::Update()
 	camera->eye.x =		cameraPosition.x + 5.0f;	camera->eye.y = cameraPosition.y + 5.0f;		camera->eye.z = cameraPosition.z + -25.0f;
 	camera->center.x =	cameraPosition.x + 0.0f;	camera->center.y = cameraPosition.y + 0.0f;		camera->center.z = cameraPosition.z + -15.0f;
 	camera->up.x =		cameraPosition.x + 0.0f;	camera->up.y = cameraPosition.y + 1.0f;			camera->up.z = cameraPosition.z + -15.0f;
-}
-
-void Source::DrawCubeArray() 
-{
-	
-}
-
-void Source::DrawIndexedCube()
-{
-	
 }
 
 void Source::Display()
@@ -158,8 +131,49 @@ void Source::Display()
 
 void Source::InitObjects()
 {
+	//sets up camera
+	camera = new Camera();
+	camera->eye.x = cameraPosition.x + 5.0f;		camera->eye.y = cameraPosition.y + 5.0f;			camera->eye.z = cameraPosition.z + -15.0f;
+	camera->center.x = cameraPosition.x + 0.0f;		camera->center.y = cameraPosition.y + 0.0f;			camera->center.z = cameraPosition.z + 0.0f;
+	camera->up.x = cameraPosition.x + 0.0f;			camera->up.y = cameraPosition.y + 1.0f;				camera->up.z = cameraPosition.z + 0.0f;
+
+	//Cube::Load((char*)"cube.txt");
+	Mesh* cubeMesh = MeshLoader::Load((char*)"Cube.txt");
+	//Mesh* pyramidMesh = MeshLoader::Load((char*)"pyramid.txt");
+
+	Texture2D* texture = new Texture2D();
+	texture->Load((char*)"Penguins.raw", 512, 512);
+
+	for (int i = 0; i < 1000; i++)
+	{
+		objects[i] = new Cube(cubeMesh, texture, ((rand() % 800) / 10.0f) - 20.0f, ((rand() % 500) / 10.0f) - 10.0f, -(rand() % 1500) / 10.0f);
+	}
+}
+
+void Source::InitLighting()
+{
+	_lightPosition = new Vector4();
+	_lightPosition->x = 0.0;
+	_lightPosition->y = 0.0;
+	_lightPosition->z = 1.0;
+	_lightPosition->w = 0.0;
+
+	_lightData = new Lighting();
+	_lightData->Ambient.x = 0.6;
+	_lightData->Ambient.y = 0.6;
+	_lightData->Ambient.z = 0.6;
+	_lightData->Ambient.w = 1.0;
+	_lightData->Diffuse.x = 0.8;
+	_lightData->Diffuse.y = 0.8;
+	_lightData->Diffuse.z = 0.8;
+	_lightData->Diffuse.w = 1.0;
+	_lightData->Specular.x = 0.2;
+	_lightData->Specular.y = 0.2;
+	_lightData->Specular.z = 0.2;
+	_lightData->Specular.w = 1.0;
 }
 
 void Source::InitGL(int argc, char* argv[])
 {
+	
 }
