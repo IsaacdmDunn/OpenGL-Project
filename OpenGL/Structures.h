@@ -33,10 +33,10 @@ struct Camera
 	Vector3 up;
 };
 
-struct Normals
-{
-	Vector3 normal;
-};
+//struct Normals
+//{
+//	Vector3 normal;
+//};
 
 struct Vertex
 {
@@ -51,7 +51,7 @@ struct TexCoord
 struct Mesh
 {
 	Vertex* Vertices;
-	Normals* Normals;
+	Vector3* Normals;
 	GLushort* Indices;
 	TexCoord* TexCoords;
 	int VertexCount, NormalCount, IndexCount, TexCoordCount;

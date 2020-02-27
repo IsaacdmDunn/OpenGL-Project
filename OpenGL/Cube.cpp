@@ -39,7 +39,6 @@ void Cube::Draw()
 		glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 		glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 		glEnableClientState(GL_TEXTURE_COORD_ARRAY);
-		//glTexCoordPointer(2, GL_FLOAT, 0, _mesh->TexCoord);
 		glPushMatrix();
 
 		glTranslatef(_position.x, _position.y, _position.z);
@@ -51,17 +50,19 @@ void Cube::Draw()
 		{
 			glTexCoord2fv(&_mesh->TexCoords[_mesh->Indices[i]].u);
 			//glColor3fv(&_mesh->Colors[_mesh->Indices[i]].r);
-			glNormal3f(_mesh->Normals[i].normal.x, _mesh->Normals[i].normal.y, _mesh->Normals[i].normal.z);
+			glNormal3f(_mesh->Normals[i].x, _mesh->Normals[i].y, _mesh->Normals[i].z);
 			glVertex3fv(&_mesh->Vertices[_mesh->Indices[i]].x);
 		}
+		glPopMatrix();
+
 		glEnd();
 		glDisableClientState(GL_TEXTURE_COORD_ARRAY);
-		glPopMatrix();
 	}
 }
 
 void Cube::Update()
 {
+	//updates cube rotation
 	if (rotation >= 360.0f)
 	{
 		rotation = 0.0f;
@@ -70,5 +71,6 @@ void Cube::Update()
 
 void Cube::SetRotation(GLfloat newRotation)
 {
+	//increases rotation of cube
 	rotation += newRotation;
 }

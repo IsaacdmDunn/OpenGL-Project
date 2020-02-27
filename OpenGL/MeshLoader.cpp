@@ -33,12 +33,12 @@ namespace MeshLoader
 	void LoadNormals(ifstream& inFile, Mesh& mesh)
 	{
 		inFile >> mesh.NormalCount;
-		mesh.Normals = new Normals[mesh.NormalCount];
+		mesh.Normals = new Vector3[mesh.NormalCount];
 		for (int i = 0; i < mesh.NormalCount; i++)
 		{
-			inFile >> mesh.Normals[i].normal.x;
-			inFile >> mesh.Normals[i].normal.y;
-			inFile >> mesh.Normals[i].normal.z;
+			inFile >> mesh.Normals[i].x;
+			inFile >> mesh.Normals[i].y;
+			inFile >> mesh.Normals[i].z;
 		}
 	}
 
@@ -76,8 +76,9 @@ namespace MeshLoader
 		}
 
 		LoadVertices(inFile, * mesh);
-		LoadNormals(inFile, *mesh);
 		LoadTextureCoords(inFile, *mesh);
+		LoadNormals(inFile, *mesh);
+
 		LoadIndices(inFile, * mesh);
 
 		return mesh;
