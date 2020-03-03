@@ -1,13 +1,2 @@
-﻿  Source.cpp
-C:\Users\d012751j\Documents\GitHub\OpenGL-Project\OpenGL\Source.cpp(31): warning C4156: deletion of an array expression without using the array form of 'delete'; array form substituted
-C:\Users\d012751j\Documents\GitHub\OpenGL-Project\OpenGL\Source.cpp(31): warning C4154: deletion of an array expression; conversion to pointer supplied
-C:\Users\d012751j\Documents\GitHub\OpenGL-Project\OpenGL\Source.cpp(131): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\d012751j\Documents\GitHub\OpenGL-Project\OpenGL\Source.cpp(132): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\d012751j\Documents\GitHub\OpenGL-Project\OpenGL\Source.cpp(133): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\d012751j\Documents\GitHub\OpenGL-Project\OpenGL\Source.cpp(135): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\d012751j\Documents\GitHub\OpenGL-Project\OpenGL\Source.cpp(136): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\d012751j\Documents\GitHub\OpenGL-Project\OpenGL\Source.cpp(137): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\d012751j\Documents\GitHub\OpenGL-Project\OpenGL\Source.cpp(139): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\d012751j\Documents\GitHub\OpenGL-Project\OpenGL\Source.cpp(140): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\d012751j\Documents\GitHub\OpenGL-Project\OpenGL\Source.cpp(141): warning C4305: '=': truncation from 'double' to 'float'
+﻿  Cube.cpp
   OpenGL.vcxproj -> C:\Users\d012751j\Documents\GitHub\OpenGL-Project\OpenGL\Debug\OpenGL.exe

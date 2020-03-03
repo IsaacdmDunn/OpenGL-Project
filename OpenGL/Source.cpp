@@ -1,7 +1,4 @@
 #include "Source.h"
-#include "Structures.h"
-#include "GLUTCallbacks.h"
-#include "MeshLoader.h"
 #include <iostream>
 
 
@@ -28,7 +25,7 @@ Source::Source(int argc, char* argv[])
 Source::~Source()
 {
 	delete camera;
-	delete objects;
+	//delete objects;
 }
 
 void Source::Keyboard(unsigned char key, int x, int y)
@@ -71,9 +68,10 @@ void Source::Update()
 	//object rotation
 	for (int i = 0; i < 1000; i++)
 	{
-		//objects[i]->SetRotation(1.0f);
+		objects[i]->Update();
 	}
-
+	glTranslatef(0.0f, 0.0f, -5.0f);
+	glutPostRedisplay();
 	//update camera position
 	//camera->eye.x =		cameraPosition.x + 5.0f;	camera->eye.y = cameraPosition.y + 5.0f;		camera->eye.z = cameraPosition.z + -25.0f;
 	//camera->center.x =	cameraPosition.x + 0.0f;	camera->center.y = cameraPosition.y + 0.0f;		camera->center.z = cameraPosition.z + -15.0f;

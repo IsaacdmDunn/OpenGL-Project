@@ -19,7 +19,7 @@ bool Cube::Load(char* path)
 
 Cube::Cube(Mesh* mesh, Texture2D* _texture, float x, float y, float z) : SceneObject(mesh, _texture)
 {
-	rotation = rand();
+	//rotation = rand();
 
 	_position.x = x;
 	_position.y = y;
@@ -53,10 +53,11 @@ void Cube::Draw()
 			glNormal3f(_mesh->Normals[i].x, _mesh->Normals[i].y, _mesh->Normals[i].z);
 			glVertex3fv(&_mesh->Vertices[_mesh->Indices[i]].x);
 		}
-		glPopMatrix();
+		
 
 		glEnd();
-		glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+		glPopMatrix();
+		//glDisableClientState(GL_TEXTURE_COORD_ARRAY);
 	}
 }
 

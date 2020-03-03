@@ -1,9 +1,15 @@
 
 #include <Windows.h>
-#include "Structures.h"
+#include <gl/GL.h>
+#include <gl/GLU.h>
+#include "GL\freeglut.h"
 
+
+#include "GLUTCallbacks.h"
+#include "Structures.h"
+#include "MeshLoader.h"
 #include "Cube.h"
-#include "Pyramid.h"
+#include "SceneObject.h"
 
 #define REFRESH_RATE 16
 

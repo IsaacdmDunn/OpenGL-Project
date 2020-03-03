@@ -81,6 +81,8 @@ namespace MeshLoader
 
 		LoadIndices(inFile, * mesh);
 
+		inFile.close();
+
 		return mesh;
 	}
 }
