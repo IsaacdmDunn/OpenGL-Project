@@ -13,6 +13,7 @@ class Cube : public SceneObject
 private:
 
 	Vector3 _position;
+	Material* _material;
 	float x, y, z;
 
 protected:
@@ -26,4 +27,8 @@ public:
 	void Draw();
 	void Update();
 	void SetRotation(GLfloat newRotation);
+	float r;
+	float g;
+	float b;
+	void Rin();
 };

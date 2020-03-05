@@ -47,6 +47,25 @@ void Source::Keyboard(unsigned char key, int x, int y)
 	{
 		cameraPosition.z--;
 	}
+	else if (key == '1')
+	{ 
+		for (int i = 0; i < 1000; i++)
+		{
+			objects[i]->Draw();
+
+		}
+	}
+
+	else if (key == '2')
+	{
+	
+	}
+
+	else if (key == '3')
+	{
+
+	}
+
 
 	std::cout << "X: " << cameraPosition.x << " Y: " << cameraPosition.y << " Z: " << cameraPosition.z << std::endl;
 }
@@ -73,9 +92,11 @@ void Source::Update()
 	glTranslatef(0.0f, 0.0f, -5.0f);
 	glutPostRedisplay();
 	//update camera position
-	//camera->eye.x =		cameraPosition.x + 5.0f;	camera->eye.y = cameraPosition.y + 5.0f;		camera->eye.z = cameraPosition.z + -25.0f;
-	//camera->center.x =	cameraPosition.x + 0.0f;	camera->center.y = cameraPosition.y + 0.0f;		camera->center.z = cameraPosition.z + -15.0f;
-	//camera->up.x =		cameraPosition.x + 0.0f;	camera->up.y = cameraPosition.y + 1.0f;			camera->up.z = cameraPosition.z + -15.0f;
+	camera->eye.x = cameraPosition.x + 0.0f;		camera->eye.y = cameraPosition.y + 0.0f;			camera->eye.z = cameraPosition.z + 1.0f;
+	camera->center.x = cameraPosition.x + 0.0f;		camera->center.y = cameraPosition.y + 0.0f;			camera->center.z = cameraPosition.z + 0.0f;
+	camera->up.x = cameraPosition.x + 0.0f;			camera->up.y = cameraPosition.y + 1.0f;				camera->up.z = cameraPosition.z + 0.0f;
+	
+	
 }
 
 void Source::Display()

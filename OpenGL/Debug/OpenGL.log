@@ -1,2 +1,20 @@
 ﻿  Cube.cpp
-  OpenGL.vcxproj -> C:\Users\d012751j\Documents\GitHub\OpenGL-Project\OpenGL\Debug\OpenGL.exe
+C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Cube.cpp(30,28): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Cube.cpp(31,29): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Cube.cpp(32,29): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Cube.cpp(34,28): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Cube.cpp(35,29): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Cube.cpp(36,29): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Cube.cpp(38,29): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Cube.cpp(39,30): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Cube.cpp(40,30): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Cube.cpp(59,29): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Cube.cpp(60,29): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Cube.cpp(61,29): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Cube.cpp(63,29): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Cube.cpp(64,29): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Cube.cpp(65,29): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Cube.cpp(67,30): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Cube.cpp(68,30): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Cube.cpp(69,30): warning C4305: '=': truncation from 'double' to 'float'
+  OpenGL.vcxproj -> C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\Debug\OpenGL.exe
