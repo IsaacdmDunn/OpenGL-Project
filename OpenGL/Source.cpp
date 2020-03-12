@@ -49,7 +49,7 @@ void Source::Keyboard(unsigned char key, int x, int y)
 	}
 	else if (key == '1')
 	{ 
-		for (int i = 0; i < 1000; i++)
+		for (int i = 0; i < 10; i++)
 		{
 			objects[i]->Draw();
 
@@ -85,7 +85,7 @@ void Source::Update()
 	glutPostRedisplay();
 
 	//object rotation
-	for (int i = 0; i < 1000; i++)
+	for (int i = 0; i < 10; i++)
 	{
 		objects[i]->Update();
 	}
@@ -104,7 +104,7 @@ void Source::Display()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	//draw objects
-	for (int i = 0; i < 1000; i++)
+	for (int i = 0; i < 10; i++)
 	{
 		objects[i]->Draw();
 
@@ -123,7 +123,7 @@ void Source::InitObjects()
 	camera->up.x = cameraPosition.x + 0.0f;			camera->up.y = cameraPosition.y + 1.0f;				camera->up.z = cameraPosition.z + 0.0f;
 
 	//load cube object file
-	Mesh* cubeMesh = MeshLoader::Load((char*)"Cube.txt");
+	Mesh* cubeMesh = objLoader::Load((char*)"cube.obj");
 	//Mesh* pyramidMesh = MeshLoader::Load((char*)"pyramid.txt");
 
 	//load cube textures

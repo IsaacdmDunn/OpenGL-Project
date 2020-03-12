@@ -8,6 +8,7 @@
 #include "GLUTCallbacks.h"
 #include "Structures.h"
 #include "MeshLoader.h"
+#include "objLoader.h"
 #include "Cube.h"
 #include "SceneObject.h"
 
@@ -28,7 +29,7 @@ public:
 
 private:
 	Camera* camera;
-	SceneObject* objects[1000];
+	SceneObject* objects[10];
 
 	Vector3 cameraPosition;
 	Vector4* _lightPosition;
