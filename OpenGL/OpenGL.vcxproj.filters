@@ -42,6 +42,12 @@
     <ClInclude Include="objLoader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Structures2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Structures3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">

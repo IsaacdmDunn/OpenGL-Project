@@ -1,21 +1,34 @@
-﻿  GLUTCallbacks.cpp
-  Source.cpp
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Source.cpp(150,29): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Source.cpp(151,29): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Source.cpp(152,29): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Source.cpp(154,29): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Source.cpp(155,29): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Source.cpp(156,29): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Source.cpp(158,30): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Source.cpp(159,30): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Source.cpp(160,30): warning C4305: '=': truncation from 'double' to 'float'
+﻿  Cube.cpp
+  GLUTCallbacks.cpp
   objLoader.cpp
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\objLoader.cpp(59,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\objLoader.cpp(90,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\objLoader.cpp(115,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\objLoader.cpp(117,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\objLoader.cpp(119,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\objLoader.cpp(121,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\objLoader.cpp(128,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\objLoader.cpp(131,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\objLoader.cpp(416,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\objLoader.cpp(509,21): warning C4018: '<': signed/unsigned mismatch
+  SceneObject.cpp
+  Source.cpp
+C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Source.cpp(134,21): warning C4018: '<': signed/unsigned mismatch
+  Texture2D.cpp
   Generating Code...
-Source.obj : error LNK2019: unresolved external symbol "struct Mesh * __cdecl objLoader::Load(char *)" (?Load@objLoader@@YAPAUMesh@@PAD@Z) referenced in function "public: void __thiscall Source::InitObjects(void)" (?InitObjects@Source@@QAEXXZ)
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\Debug\OpenGL.exe : fatal error LNK1120: 1 unresolved externals
+C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\objLoader.cpp(143): warning C4715: 'objLoader::LoadFile': not all control paths return a value
+LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/FORCE' specification
+objLoader.obj : warning LNK4006: "struct Vector3 __cdecl Algorithm::operator*(float const &,struct Vector3 const &)" (??DAlgorithm@@YA?AUVector3@@ABMABU1@@Z) already defined in GLUTCallbacks.obj; second definition ignored
+objLoader.obj : warning LNK4006: "float __cdecl Math::AngleBetweenVectors(struct Vector3,struct Vector3)" (?AngleBetweenVectors@Math@@YAMUVector3@@0@Z) already defined in GLUTCallbacks.obj; second definition ignored
+objLoader.obj : warning LNK4006: "struct Vector3 __cdecl Math::CrossProduct(struct Vector3,struct Vector3)" (?CrossProduct@Math@@YA?AUVector3@@U2@0@Z) already defined in GLUTCallbacks.obj; second definition ignored
+objLoader.obj : warning LNK4006: "float __cdecl Math::DotProduct(struct Vector3,struct Vector3)" (?DotProduct@Math@@YAMUVector3@@0@Z) already defined in GLUTCallbacks.obj; second definition ignored
+objLoader.obj : warning LNK4006: "struct Vector3 __cdecl Algorithm::GenerateTriangleNormal(struct Vector3,struct Vector3,struct Vector3)" (?GenerateTriangleNormal@Algorithm@@YA?AUVector3@@U2@00@Z) already defined in GLUTCallbacks.obj; second definition ignored
+objLoader.obj : warning LNK4006: "bool __cdecl Algorithm::InTriangle(struct Vector3,struct Vector3,struct Vector3,struct Vector3)" (?InTriangle@Algorithm@@YA_NUVector3@@000@Z) already defined in GLUTCallbacks.obj; second definition ignored
+objLoader.obj : warning LNK4006: "float __cdecl Math::Magnitude(struct Vector3)" (?Magnitude@Math@@YAMUVector3@@@Z) already defined in GLUTCallbacks.obj; second definition ignored
+objLoader.obj : warning LNK4006: "struct Vector3 __cdecl Math::ProjectionCalculation(struct Vector3,struct Vector3)" (?ProjectionCalculation@Math@@YA?AUVector3@@U2@0@Z) already defined in GLUTCallbacks.obj; second definition ignored
+objLoader.obj : warning LNK4006: "bool __cdecl Algorithm::SameSide(struct Vector3,struct Vector3,struct Vector3,struct Vector3)" (?SameSide@Algorithm@@YA_NUVector3@@000@Z) already defined in GLUTCallbacks.obj; second definition ignored
+Source.obj : warning LNK4006: "struct Vector3 __cdecl Algorithm::operator*(float const &,struct Vector3 const &)" (??DAlgorithm@@YA?AUVector3@@ABMABU1@@Z) already defined in GLUTCallbacks.obj; second definition ignored
+Source.obj : warning LNK4006: "float __cdecl Math::AngleBetweenVectors(struct Vector3,struct Vector3)" (?AngleBetweenVectors@Math@@YAMUVector3@@0@Z) already defined in GLUTCallbacks.obj; second definition ignored
+Source.obj : warning LNK4006: "struct Vector3 __cdecl Math::CrossProduct(struct Vector3,struct Vector3)" (?CrossProduct@Math@@YA?AUVector3@@U2@0@Z) already defined in GLUTCallbacks.obj; second definition ignored
+Source.obj : warning LNK4006: "float __cdecl Math::DotProduct(struct Vector3,struct Vector3)" (?DotProduct@Math@@YAMUVector3@@0@Z) already defined in GLUTCallbacks.obj; second definition ignored
+Source.obj : warning LNK4006: "struct Vector3 __cdecl Algorithm::GenerateTriangleNormal(struct Vector3,struct Vector3,struct Vector3)" (?GenerateTriangleNormal@Algorithm@@YA?AUVector3@@U2@00@Z) already defined in GLUTCallbacks.obj; second definition ignored
+Source.obj : warning LNK4006: "bool __cdecl Algorithm::InTriangle(struct Vector3,struct Vector3,struct Vector3,struct Vector3)" (?InTriangle@Algorithm@@YA_NUVector3@@000@Z) already defined in GLUTCallbacks.obj; second definition ignored
+Source.obj : warning LNK4006: "float __cdecl Math::Magnitude(struct Vector3)" (?Magnitude@Math@@YAMUVector3@@@Z) already defined in GLUTCallbacks.obj; second definition ignored
+Source.obj : warning LNK4006: "struct Vector3 __cdecl Math::ProjectionCalculation(struct Vector3,struct Vector3)" (?ProjectionCalculation@Math@@YA?AUVector3@@U2@0@Z) already defined in GLUTCallbacks.obj; second definition ignored
+Source.obj : warning LNK4006: "bool __cdecl Algorithm::SameSide(struct Vector3,struct Vector3,struct Vector3,struct Vector3)" (?SameSide@Algorithm@@YA_NUVector3@@000@Z) already defined in GLUTCallbacks.obj; second definition ignored
+C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\Debug\OpenGL.exe : warning LNK4088: image being generated due to /FORCE option; image may not run
+  OpenGL.vcxproj -> C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\Debug\OpenGL.exe

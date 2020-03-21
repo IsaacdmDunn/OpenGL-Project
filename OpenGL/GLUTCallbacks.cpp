@@ -33,7 +33,7 @@ namespace GLUTCallbacks
 	{
 		if (source != nullptr)
 		{
-			source->Display();
+			source->Render();
 		}
 	}
 }

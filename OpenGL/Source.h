@@ -4,13 +4,15 @@
 #include <gl/GLU.h>
 #include "GL\freeglut.h"
 
-
 #include "GLUTCallbacks.h"
 #include "Structures.h"
-#include "MeshLoader.h"
+#include "Structures2.h"
+//#include "MeshLoader.h"
 #include "objLoader.h"
-#include "Cube.h"
-#include "SceneObject.h"
+//#include "Cube.h"
+//#include "SceneObject.h"
+
+
 
 #define REFRESH_RATE 16
 
@@ -21,18 +23,20 @@ public:
 	~Source(void);
 	void Update();
 	void Keyboard(unsigned char key, int x, int y);
-	void Display();
+	//void Display();
+	void Render();
 
 	void InitObjects();
 	void InitGL(int argc, char* argv[]);
 	void InitLighting();
 
 private:
-	Camera* camera;
-	SceneObject* objects[10];
+	objLoader objectLoader;
+	objLoader Suzanne;
 
-	Vector3 cameraPosition;
-	Vector4* _lightPosition;
-	Lighting* _lightData;
+	Camera* _Camera;
+	Lighting* _Light;
+
+	float rotation = 0.0f;
 };
 
