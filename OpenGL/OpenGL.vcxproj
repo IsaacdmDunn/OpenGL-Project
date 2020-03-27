@@ -135,6 +135,7 @@
     <ClInclude Include="Structures2.h" />
     <ClInclude Include="Structures3.h" />
     <ClInclude Include="Texture2D.h" />
+    <ClInclude Include="Tree.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cube.cpp" />
@@ -145,6 +146,7 @@
     <ClCompile Include="SceneObject.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="Texture2D.cpp" />
+    <ClCompile Include="Tree.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

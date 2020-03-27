@@ -3,6 +3,10 @@
 #include <string>
 #include <iostream>
 #include <vector>
+#include "Windows.h"
+#include <gl/GL.h>
+#include <gl/GLU.h>
+#include "GL\freeglut.h"
 
 //struct for 2D vector
 struct Vector2 {

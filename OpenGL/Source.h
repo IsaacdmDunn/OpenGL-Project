@@ -9,6 +9,8 @@
 #include "Structures2.h"
 //#include "MeshLoader.h"
 #include "objLoader.h"
+#include "Tree.h"
+#include "Texture2D.h"
 //#include "Cube.h"
 //#include "SceneObject.h"
 
@@ -33,6 +35,8 @@ public:
 private:
 	objLoader objectLoader;
 	objLoader Suzanne;
+	Texture2D* _BackgroundTexture;
+	Tree* _Tree[50];
 
 	Camera* _Camera;
 	Lighting* _Light;
