@@ -7,7 +7,6 @@
 #include <vector>
 #include <algorithm>
 #include "Structures.h"
-#include "Structures2.h"
 
 class objLoader
 {

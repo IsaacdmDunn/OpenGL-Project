@@ -1,6 +1,5 @@
 #pragma once
 #include "Structures.h"
-#include "Structures2.h"
 
 #include <gl/GL.h>
 #include <gl/GLU.h>

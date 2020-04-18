@@ -124,25 +124,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Cube.h" />
+    <ClInclude Include="Floor.h" />
     <ClInclude Include="GLUTCallbacks.h" />
     <ClInclude Include="MeshLoader.h" />
     <ClInclude Include="objLoader.h" />
-    <ClInclude Include="Pyramid.h" />
     <ClInclude Include="SceneObject.h" />
     <ClInclude Include="Source.h" />
     <ClInclude Include="Structures.h" />
-    <ClInclude Include="Structures2.h" />
-    <ClInclude Include="Structures3.h" />
     <ClInclude Include="Texture2D.h" />
     <ClInclude Include="Tree.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Cube.cpp" />
+    <ClCompile Include="Floor.cpp" />
     <ClCompile Include="GLUTCallbacks.cpp" />
     <ClCompile Include="MeshLoader.cpp" />
     <ClCompile Include="objLoader.cpp" />
-    <ClCompile Include="Pyramid.cpp" />
     <ClCompile Include="SceneObject.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="Texture2D.cpp" />

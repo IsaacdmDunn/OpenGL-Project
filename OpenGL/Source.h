@@ -6,10 +6,10 @@
 
 #include "GLUTCallbacks.h"
 #include "Structures.h"
-#include "Structures2.h"
 //#include "MeshLoader.h"
 #include "objLoader.h"
 #include "Tree.h"
+#include "Floor.h"
 #include "Texture2D.h"
 //#include "Cube.h"
 //#include "SceneObject.h"
@@ -17,6 +17,7 @@
 
 
 #define REFRESH_RATE 16
+#define TREECOUNT 15
 
 class Source
 {
@@ -36,7 +37,8 @@ private:
 	objLoader objectLoader;
 	objLoader Suzanne;
 	Texture2D* _BackgroundTexture;
-	Tree* _Tree[50];
+	Tree* _Tree[TREECOUNT];
+	Floor* _Floor;
 
 	Camera* _Camera;
 	Lighting* _Light;

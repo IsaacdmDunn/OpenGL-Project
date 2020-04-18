@@ -1,9 +1,9 @@
-#include "Tree.h"
+#include "Floor.h"
 #include <iostream>
 #include <stdlib.h>     
 #include <time.h>    
 
-Tree::Tree(/*Texture2D* _texture, */float x, float y, float z)
+Floor::Floor(/*Texture2D* _texture, */float x, float y, float z)
 {
 	srand(time(NULL));
 	/*_position.x = rand() % 300 - 150;
@@ -14,13 +14,13 @@ Tree::Tree(/*Texture2D* _texture, */float x, float y, float z)
 	_position.z = z;
 }
 
-Tree::~Tree()
+Floor::~Floor()
 {
 }
 
-void Tree::Load()
+void Floor::Load()
 {
-	bool cubeLoad = objectLoader.LoadFile("tree.obj");
+	bool cubeLoad = objectLoader.LoadFile("floor.obj");
 
 	for (auto& objectLoader : objectLoader.mLoadedMeshes) {
 		std::cout << "Object loaded: " << objectLoader.meshName << ".obj" << std::endl;
@@ -32,13 +32,13 @@ void Tree::Load()
 	std::cout << _position.x << "  " << _position.y << "  " << _position.z << "  " << std::endl;
 }
 
-void Tree::Draw()
+void Floor::Draw()
 {
-	
+
 
 	glPushMatrix();
 	glTranslatef(_position.x, _position.y, _position.z);
-
+	glScalef(100, 0.1, 100);
 
 	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
 	glBegin(GL_TRIANGLES);
@@ -61,15 +61,15 @@ void Tree::Draw()
 	glDisableClientState(GL_TEXTURE_COORD_ARRAY);
 
 	glPopMatrix();
-	
+
 
 }
 
-void Tree::Update()
+void Floor::Update()
 {
 	glTranslatef(_position.x, _position.y, _position.z);
 }
 
-void Tree::SetRotation(GLfloat newRotation)
+void Floor::SetRotation(GLfloat newRotation)
 {
 }
