@@ -6,9 +6,6 @@
 Floor::Floor(/*Texture2D* _texture, */float x, float y, float z)
 {
 	srand(time(NULL));
-	/*_position.x = rand() % 300 - 150;
-	_position.y = -2;
-	_position.z = rand() % 15 - 10;*/
 	_position.x = x;
 	_position.y = y;
 	_position.z = z;
@@ -20,7 +17,7 @@ Floor::~Floor()
 
 void Floor::Load()
 {
-	bool cubeLoad = objectLoader.LoadFile("floor.obj");
+	bool cubeLoad = objectLoader.LoadFile("Assets/floor.obj");
 
 	for (auto& objectLoader : objectLoader.mLoadedMeshes) {
 		std::cout << "Object loaded: " << objectLoader.meshName << ".obj" << std::endl;

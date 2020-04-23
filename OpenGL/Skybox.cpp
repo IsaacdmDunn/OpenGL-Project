@@ -1,24 +1,27 @@
-#include "Tree.h"
+#include "Skybox.h"
 #include <iostream>
 #include <stdlib.h>     
 #include <time.h>    
 
-Tree::Tree(/*Texture2D* _texture, */float x, float y, float z, float rotation)
+Skybox::Skybox(float x, float y, float z, Vector3 rotation)
 {
 	srand(time(NULL));
 	_position.x = x;
 	_position.y = y;
 	_position.z = z;
-	_rotation = rotation;
+
+	_rotation.x = rotation.x;
+	_rotation.y = rotation.y;
+	_rotation.z = rotation.z;
 }
 
-Tree::~Tree()
+Skybox::~Skybox()
 {
 }
 
-void Tree::Load()
+void Skybox::Load()
 {
-	bool cubeLoad = objectLoader.LoadFile("Assets/tree.obj");
+	bool cubeLoad = objectLoader.LoadFile("Assets/skybox.obj");
 
 	for (auto& objectLoader : objectLoader.mLoadedMeshes) {
 		std::cout << "Object loaded: " << objectLoader.meshName << ".obj" << std::endl;
@@ -27,16 +30,17 @@ void Tree::Load()
 	for (auto& objectLoader : objectLoader.mLoadedMaterial) {
 		std::cout << "Material loaded: " << objectLoader.name << ".mtl" << std::endl;
 	}
-	std::cout << _position.x << "  " << _position.y << "  " << _position.z << "  " << _rotation << "" << std::endl;
+	std::cout << _position.x << "  " << _position.y << "  " << _position.z << "  " << std::endl;
 }
 
-void Tree::Draw()
+void Skybox::Draw()
 {
-	
-
 	glPushMatrix();
 	glTranslatef(_position.x, _position.y, _position.z);
-	glRotatef(_rotation, 0, 1, 0);
+	glRotatef(_rotation.x, 1, 0, 0);
+	glRotatef(_rotation.y, 0, 1, 0);
+	glRotatef(_rotation.z, 0, 0, 1);
+	glScalef(25, 1, 25);
 
 	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
 	glBegin(GL_TRIANGLES);
@@ -59,22 +63,13 @@ void Tree::Draw()
 	glDisableClientState(GL_TEXTURE_COORD_ARRAY);
 
 	glPopMatrix();
-	
+
 
 }
 
-void Tree::Update()
+void Skybox::SetPosition(float newX, float newY, float newZ)
 {
-	
-}
-
-void Tree::SetRotation(float newX, float newY, float newZ)
-{
-}
-
-void Tree::SetPosition(float newX, float newY, float newZ)
-{
-	_position.x = newX;
-	_position.y = newY;
-	_position.z = newZ;
+	_position.x -= newX;
+	_position.y -= newY;
+	_position.z -= newZ;
 }
