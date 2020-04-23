@@ -129,8 +129,10 @@
     <ClInclude Include="GameLevel.h" />
     <ClInclude Include="GLUTCallbacks.h" />
     <ClInclude Include="MeshLoader.h" />
+    <ClInclude Include="Moon.h" />
     <ClInclude Include="objLoader.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Ring.h" />
     <ClInclude Include="SceneObject.h" />
     <ClInclude Include="Skybox.h" />
     <ClInclude Include="Source.h" />
@@ -143,8 +145,10 @@
     <ClCompile Include="GameLevel.cpp" />
     <ClCompile Include="GLUTCallbacks.cpp" />
     <ClCompile Include="MeshLoader.cpp" />
+    <ClCompile Include="Moon.cpp" />
     <ClCompile Include="objLoader.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Ring.cpp" />
     <ClCompile Include="SceneObject.cpp" />
     <ClCompile Include="Skybox.cpp" />
     <ClCompile Include="Source.cpp" />

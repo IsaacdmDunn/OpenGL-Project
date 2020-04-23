@@ -17,6 +17,8 @@ GameLevel::~GameLevel()
 	}
 	delete[] _Skybox;
 	delete _Floor;
+	delete _Ring;
+	delete _Moon;
 }
 
 void GameLevel::Update()
@@ -29,6 +31,8 @@ void GameLevel::Update()
 	}
 
 	_Floor->Update();
+	_Ring->Update();
+	_Moon->Update();
 }
 
 void GameLevel::Keyboard(unsigned char key, int x, int y)
@@ -39,29 +43,38 @@ void GameLevel::Keyboard(unsigned char key, int x, int y)
 	//moves camera with WASD controls
 	if (key == 'd')
 	{
-		playerPosition.x -= 0.5;
+		playerPosition.x -= 1.1;
 
 	}
 	else if (key == 'a')
 	{
-		playerPosition.x += 0.5;
+		playerPosition.x += 1.1;
 	}
 	if (key == 'w')
 	{
-		playerPosition.z += 0.5;
+		playerPosition.z += 1.1;
 	}
 	else if (key == 's')
 	{
-		playerPosition.z -= 0.5;
+		playerPosition.z -= 1.1;
 	}
 	//rotates camera with Q for left and E for right
 	if (key == 'q')
 	{
-		playerRotation.y -= 0.5;
+		playerRotation.y -= 2.1;
 	}
 	else if (key == 'e')
 	{
-		playerRotation.y += 0.5;
+		playerRotation.y += 2.1;
+	}
+	//rotates camera with Q for left and E for right
+	if (key == 'r')
+	{
+		playerRotation.x -= 2.1;
+	}
+	else if (key == 'f')
+	{
+		playerRotation.x += 2.1;
 	}
 
 	//sets the position and rotation for the player
@@ -84,37 +97,15 @@ void GameLevel::Render()
 
 
 	glBindTexture(GL_TEXTURE_2D, 0);
-	//disables projection
-	glMatrixMode(GL_PROJECTION);
-	glPushMatrix();
-	glLoadIdentity();
-	glMatrixMode(GL_MODELVIEW);
-	glPushMatrix();
-	glLoadIdentity();
-	glDisable(GL_LIGHTING);
-	glDisable(GL_DEPTH_TEST);
-
-	//glBindTexture(GL_TEXTURE_2D, _BackgroundTexture->GetID()); //binds a blank texture
-	std::string scoreText = "Score: ";
-	glPushMatrix();
-	glRasterPos2f(50, 50); //Sets the texts position in relation to NDC (Normalized Device Coordinates [-1 to 1])
-	glColor3f(1, 1, 1); //Sets the colour of the text
-	glutBitmapString(GLUT_BITMAP_TIMES_ROMAN_24, (unsigned char*)scoreText.c_str()); //Sets the font and the text
-	glPopMatrix();
-
-	//reenables projection
-	glEnable(GL_DEPTH_TEST);
-	glEnable(GL_LIGHTING);
-	glMatrixMode(GL_PROJECTION);
-	glPopMatrix();
-	glMatrixMode(GL_MODELVIEW);
-	glPopMatrix();
+	
 	for (int i = 0; i < TREECOUNT; i++)
 	{
 		_Tree[i]->Draw();
 	}
 
 	_Floor->Draw();
+	_Ring->Draw();
+	_Moon->Draw();
 	_Player->Draw();
 }
 
@@ -156,6 +147,12 @@ void GameLevel::InitObjects()
 
 	_Floor = new Floor(0, -0.5, 0);
 	_Floor->Load();
+	
+	_Ring = new Ring(20, 5, 20, 0);
+	_Ring->Load();
+	
+	_Moon = new Moon(20, 150, 20, 200);
+	_Moon->Load();
 
 	_Skybox[0] = new Skybox(0, 250, 0, Vector3(0, 0, 0));
 	_Skybox[0]->Load();

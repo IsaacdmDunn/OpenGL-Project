@@ -88,6 +88,38 @@ void Source::Render()
 
 	_GameLevel->Render();
 
+	glBindTexture(GL_TEXTURE_2D, 0);
+	//disables projection
+	glMatrixMode(GL_PROJECTION);
+	glPushMatrix();
+	glLoadIdentity();
+	glMatrixMode(GL_MODELVIEW);
+	glPushMatrix();
+	glLoadIdentity();
+	glDisable(GL_LIGHTING);
+	glDisable(GL_DEPTH_TEST);
+
+	//glBindTexture(GL_TEXTURE_2D, _BackgroundTexture->GetID()); //binds a blank texture
+	std::string scoreText = "Score: ";
+	std::string gameIntroText = "It hungers...";
+	glPushMatrix();
+	glRasterPos2f(-0.95f, 0.9f); //Sets the texts position in relation to NDC (Normalized Device Coordinates [-1 to 1])
+	glutBitmapString(GLUT_BITMAP_TIMES_ROMAN_24, (unsigned char*)scoreText.c_str()); //Sets the font and the text
+	glPopMatrix();
+
+	glPushMatrix();
+	glRasterPos2f(-0.50f, 0.0f); //Sets the texts position in relation to NDC (Normalized Device Coordinates [-1 to 1])
+	glutBitmapString(GLUT_BITMAP_TIMES_ROMAN_24, (unsigned char*)gameIntroText.c_str()); //Sets the font and the text
+	glPopMatrix();
+
+	//reenables projection
+	glEnable(GL_DEPTH_TEST);
+	glEnable(GL_LIGHTING);
+	glMatrixMode(GL_PROJECTION);
+	glPopMatrix();
+	glMatrixMode(GL_MODELVIEW);
+	glPopMatrix();
+
 	glFlush();
 	glutSwapBuffers();
 }
@@ -98,7 +130,6 @@ void Source::InitObjects()
 	_Light = new Lighting();
 	_BackgroundTexture = new Texture2D();
 	_BackgroundTexture->Load((char*)"Assets/stars.raw", 512, 512);
-	
 }
 
 void Source::InitLighting()

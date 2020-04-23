@@ -62,7 +62,22 @@ void Player::SetPosition(float x, float y, float z)
 
 void Player::SetRotation(float x, float y, float z)
 {
-	_rotation.x += x;
-	_rotation.y += y;
-	_rotation.z += z;
+	if (_rotation.y > 360)
+	{
+		_rotation.y = 0;
+	}
+	else if (_rotation.x + x > 0)
+	{
+		_rotation.x = 0;
+	}
+	else if (_rotation.x + x < -55)
+	{
+		_rotation.x = -55;
+	}
+	else 
+	{
+		_rotation.x += x;
+		_rotation.y += y;
+		_rotation.z += z;
+	}
 }
