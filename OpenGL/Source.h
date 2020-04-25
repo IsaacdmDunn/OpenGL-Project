@@ -21,7 +21,8 @@ public:
 	void Update();
 	void Keyboard(unsigned char key, int x, int y);
 	void Render();
-
+	void DisableProjectedView();
+	void EnableProjectedView();
 	void InitObjects();
 	void InitGL(int argc, char* argv[]);
 	void InitLighting();

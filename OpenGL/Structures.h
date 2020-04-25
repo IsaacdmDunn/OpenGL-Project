@@ -293,7 +293,8 @@ struct Mesh {
 };
 
 //struct for camera
-struct Camera {
+struct Camera 
+{
 	Vector3 eye;
 	Vector3 center;
 	Vector3 up;
@@ -301,15 +302,26 @@ struct Camera {
 };
 
 //struct for lighting
-struct Lighting {
+struct Lighting 
+{
+	Vector3 ambient;
+	Vector3 diffuse;
+	Vector3 specular;
 
-	Lighting() {
+	Lighting() 
+	{
 		ambient = Vector3(1.0f, 0.0f, 0.0f);
 		diffuse = Vector3(0.0f, 1.0f, 0.0f);
 		specular = Vector3(0.0f, 0.0f, 1.0f);
 	}
+};
 
-	Vector3 ambient;
-	Vector3 diffuse;
-	Vector3 specular;
+struct CollisionBox 
+{
+	Vector3 objectDimenions;
+
+	CollisionBox(float height, float width, float length) 
+	{
+		objectDimenions = Vector3(height, width, length);
+	}
 };

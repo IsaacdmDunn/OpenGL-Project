@@ -127,6 +127,7 @@
     <ClInclude Include="Commons.h" />
     <ClInclude Include="Floor.h" />
     <ClInclude Include="GameLevel.h" />
+    <ClInclude Include="GameObject.h" />
     <ClInclude Include="GLUTCallbacks.h" />
     <ClInclude Include="MeshLoader.h" />
     <ClInclude Include="Moon.h" />
@@ -143,6 +144,7 @@
   <ItemGroup>
     <ClCompile Include="Floor.cpp" />
     <ClCompile Include="GameLevel.cpp" />
+    <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GLUTCallbacks.cpp" />
     <ClCompile Include="MeshLoader.cpp" />
     <ClCompile Include="Moon.cpp" />

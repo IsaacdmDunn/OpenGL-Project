@@ -1,5 +1,6 @@
 #pragma once
 
+//library
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -8,6 +9,7 @@
 #include <algorithm>
 #include "Structures.h"
 
+//class for obj loader
 class objLoader
 {
 public:

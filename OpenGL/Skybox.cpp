@@ -3,7 +3,7 @@
 #include <stdlib.h>     
 #include <time.h>    
 
-Skybox::Skybox(float x, float y, float z, Vector3 rotation)
+Skybox::Skybox(float x, float y, float z, Vector3 rotation) : GameObject(x, y, z, rotation)
 {
 	srand(time(NULL));
 	_position.x = x;
@@ -21,16 +21,7 @@ Skybox::~Skybox()
 
 void Skybox::Load()
 {
-	bool cubeLoad = objectLoader.LoadFile("Assets/skybox.obj");
-
-	for (auto& objectLoader : objectLoader.mLoadedMeshes) {
-		std::cout << "Object loaded: " << objectLoader.meshName << ".obj" << std::endl;
-	}
-
-	for (auto& objectLoader : objectLoader.mLoadedMaterial) {
-		std::cout << "Material loaded: " << objectLoader.name << ".mtl" << std::endl;
-	}
-	std::cout << _position.x << "  " << _position.y << "  " << _position.z << "  " << std::endl;
+	GameObject::Load("Assets/skybox.obj");
 }
 
 void Skybox::Draw()
@@ -67,9 +58,19 @@ void Skybox::Draw()
 
 }
 
+void Skybox::Update()
+{
+}
+
+void Skybox::SetRotation(float newX, float newY, float newZ)
+{
+	GameObject::SetRotation(newX, newY, newZ);
+}
+
 void Skybox::SetPosition(float newX, float newY, float newZ)
 {
 	_position.x -= newX;
 	_position.y -= newY;
 	_position.z -= newZ;
+	GameObject::SetPosition(_position.x, _position.y, _position.z);
 }

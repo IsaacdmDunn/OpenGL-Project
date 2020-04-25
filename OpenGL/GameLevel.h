@@ -1,5 +1,6 @@
 #pragma once
 
+//libraries
 #include "Player.h"
 #include "Tree.h"
 #include "Ring.h"
@@ -8,8 +9,10 @@
 #include "Skybox.h"
 #include "Commons.h"
 
+//game level class
 class GameLevel
 {
+//public
 public:
 	GameLevel();
 	~GameLevel();
@@ -17,6 +20,8 @@ public:
 	void Keyboard(unsigned char key, int x, int y);
 	void Render();
 	void InitObjects();
+
+//private
 private:
 	Tree* _Tree[TREECOUNT];
 	Skybox* _Skybox[SKYBOX_PLANES];

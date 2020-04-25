@@ -1,33 +1,18 @@
 #pragma once
 
-#include <Windows.h>
-#include <gl/GL.h>
-#include <gl/GLU.h>
-#include "GL\freeglut.h"
-#include "Structures.h"
-#include "objLoader.h"
-#include "Texture2D.h"
+//libraries
+#include "GameObject.h"
 
-class Floor : public objLoader
+//floor class inherits from gameobject
+class Floor : GameObject
 {
-private:
-
-
-	Material* _material;
-	float x, y, z;
-
-protected:
-
-
+//public
 public:
-	objLoader objectLoader;
-	Vector3 _position;
-	Floor(/*Texture2D* _texture,*/ float x, float y, float z);
+	Floor(float x, float y, float z, Vector3 rotation);
 	~Floor();
 	void Load();
-	float rotation;
-	//static bool Load(char* path);
 	virtual void Draw();
 	virtual void Update();
-	void SetRotation(GLfloat newRotation);
+	void SetRotation(float newX, float newY, float newZ);
+	void SetPosition(float newX, float newY, float newZ);
 };

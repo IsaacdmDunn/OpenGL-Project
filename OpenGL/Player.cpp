@@ -2,7 +2,7 @@
 #include "Player.h"
 
 //constructor
-Player::Player(float x, float y, float z, Vector3 rotation)
+Player::Player(float x, float y, float z, Vector3 rotation) : GameObject(x, y, z, rotation)
 {
 	_position.x = x;
 	_position.y = y;
@@ -11,6 +11,7 @@ Player::Player(float x, float y, float z, Vector3 rotation)
 	_rotation.y = rotation.y;
 	_rotation.z = rotation.z;
 	_Camera = new Camera();
+	_CollisionBox = new CollisionBox(3, 3, 3);
 	_PlayerObject = new Tree(x+5,y,z+5, rand() % 360);
 	_Camera->eye.z = 1.0f;
 	_Camera->up.y = 1.0f;

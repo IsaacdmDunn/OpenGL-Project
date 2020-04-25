@@ -3,13 +3,13 @@
 #include <stdlib.h>     
 #include <time.h>    
 
-Moon::Moon(/*Texture2D* _texture, */float x, float y, float z, float rotation)
+Moon::Moon(float x, float y, float z, Vector3 rotation) : GameObject(x, y, z, rotation)
 {
 	srand(time(NULL));
 	_position.x = x;
 	_position.y = y;
 	_position.z = z;
-	_rotation = rotation;
+	_rotation = rotation.y;
 }
 
 Moon::~Moon()
@@ -18,25 +18,13 @@ Moon::~Moon()
 
 void Moon::Load()
 {
-	bool cubeLoad = objectLoader.LoadFile("Assets/Moon.obj");
-
-	for (auto& objectLoader : objectLoader.mLoadedMeshes) {
-		std::cout << "Object loaded: " << objectLoader.meshName << ".obj" << std::endl;
-	}
-
-	for (auto& objectLoader : objectLoader.mLoadedMaterial) {
-		std::cout << "Material loaded: " << objectLoader.name << ".mtl" << std::endl;
-	}
-	std::cout << _position.x << "  " << _position.y << "  " << _position.z << "  " << _rotation << "" << std::endl;
+	GameObject::Load("Assets/Moon.obj");
 }
 
 void Moon::Draw()
 {
-
-
 	glPushMatrix();
 	glTranslatef(_position.x, _position.y, _position.z);
-	glRotatef(_rotation, 1, 0, 0);
 	glScalef(50, 50, 50);
 	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
 	glBegin(GL_TRIANGLES);
@@ -70,11 +58,10 @@ void Moon::Update()
 
 void Moon::SetRotation(float newX, float newY, float newZ)
 {
+	GameObject::SetRotation(newX, newY, newZ);
 }
 
 void Moon::SetPosition(float newX, float newY, float newZ)
 {
-	_position.x = newX;
-	_position.y = newY;
-	_position.z = newZ;
+	GameObject::SetPosition(newX, newY, newZ);
 }

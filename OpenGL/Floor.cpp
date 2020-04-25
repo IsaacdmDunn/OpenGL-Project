@@ -3,7 +3,7 @@
 #include <stdlib.h>     
 #include <time.h>    
 
-Floor::Floor(/*Texture2D* _texture, */float x, float y, float z)
+Floor::Floor(float x, float y, float z, Vector3 rotation) : GameObject(x, y, z, rotation)
 {
 	srand(time(NULL));
 	_position.x = x;
@@ -17,22 +17,11 @@ Floor::~Floor()
 
 void Floor::Load()
 {
-	bool cubeLoad = objectLoader.LoadFile("Assets/floor.obj");
-
-	for (auto& objectLoader : objectLoader.mLoadedMeshes) {
-		std::cout << "Object loaded: " << objectLoader.meshName << ".obj" << std::endl;
-	}
-
-	for (auto& objectLoader : objectLoader.mLoadedMaterial) {
-		std::cout << "Material loaded: " << objectLoader.name << ".mtl" << std::endl;
-	}
-	std::cout << _position.x << "  " << _position.y << "  " << _position.z << "  " << std::endl;
+	GameObject::Load("Assets/floor.obj");
 }
 
 void Floor::Draw()
 {
-
-
 	glPushMatrix();
 	glTranslatef(_position.x, _position.y, _position.z);
 	glScalef(100, 0.1, 100);
@@ -67,6 +56,12 @@ void Floor::Update()
 	glTranslatef(_position.x, _position.y, _position.z);
 }
 
-void Floor::SetRotation(GLfloat newRotation)
+void Floor::SetPosition(float newX, float newY, float newZ)
 {
+	GameObject::SetPosition(newX, newY, newZ);
+}
+
+void Floor::SetRotation(float newX, float newY, float newZ)
+{
+	GameObject::SetRotation(newX, newY, newZ);
 }
