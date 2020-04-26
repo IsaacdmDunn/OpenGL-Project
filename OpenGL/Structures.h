@@ -320,8 +320,38 @@ struct CollisionBox
 {
 	Vector3 objectDimenions;
 
-	CollisionBox(float height, float width, float length) 
+	CollisionBox(float width, float height, float length) 
 	{
-		objectDimenions = Vector3(height, width, length);
+		objectDimenions = Vector3(width, height, length);
 	}
 };
+
+//returns true or false if the 2 objects passed through have collided
+bool CollisionCheck(CollisionBox &collisionBox1, CollisionBox &collisionBox2, Vector3 position1, Vector3 position2)
+{
+	//bounding box for object 1
+	float minAX = position1.x;
+	float maxAX = position1.x + collisionBox1.objectDimenions.x;
+	float minAY = position1.y;	 
+	float maxAY = position1.y + collisionBox1.objectDimenions.y;
+	float minAZ = position1.z;	 
+	float maxAZ = position1.z + collisionBox1.objectDimenions.z;
+
+	//bounding box for object 2
+	float minBX = position2.x;
+	float maxBX = position2.x + collisionBox2.objectDimenions.x;
+	float minBY = position2.y;
+	float maxBY = position2.y + collisionBox2.objectDimenions.y;
+	float minBZ = position2.z;
+	float maxBZ = position2.z + collisionBox2.objectDimenions.z;
+
+	//if collided return true
+	if (minAX <= maxBX && maxAX >= minBX && minAY <= maxBY && maxAY >= minBY && minAZ <= maxBZ && maxAZ >= minBZ) 
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}

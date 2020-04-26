@@ -14,6 +14,7 @@ Source::Source(int argc, char* argv[])
 {
 	//create a new level
 	_GameLevel = new GameLevel();
+	int score = 0;
 
 	//initialises game and objects
 	InitGL(argc, argv);
@@ -82,8 +83,8 @@ void Source::Render()
 	//render HUD
 	glBindTexture(GL_TEXTURE_2D, 0);
 	DisableProjectedView();
-	std::string scoreText = "Score: 666";
-	std::string gameIntroText = "It hungers...";
+	scoreText = "Score: " + std::to_string(score);
+	gameIntroText = "It hungers...";
 
 	//score text
 	glPushMatrix();

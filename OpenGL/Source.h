@@ -27,6 +27,10 @@ public:
 	void InitGL(int argc, char* argv[]);
 	void InitLighting();
 
+	int score = 0;
+	std::string scoreText;
+	std::string gameIntroText;
+
 private:
 	Texture2D* _BackgroundTexture;
 	Lighting* _Light;

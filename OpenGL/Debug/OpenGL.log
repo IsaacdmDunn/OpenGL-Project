@@ -6,20 +6,13 @@ C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Floor.cpp(32,21
   GameLevel.cpp
 C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\GameLevel.cpp(16,16): warning C4154: deletion of an array expression; conversion to pointer supplied
 C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\GameLevel.cpp(21,18): warning C4154: deletion of an array expression; conversion to pointer supplied
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\GameLevel.cpp(50,26): warning C4305: '-=': truncation from 'double' to 'float'
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\GameLevel.cpp(55,26): warning C4305: '+=': truncation from 'double' to 'float'
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\GameLevel.cpp(59,26): warning C4305: '+=': truncation from 'double' to 'float'
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\GameLevel.cpp(63,26): warning C4305: '-=': truncation from 'double' to 'float'
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\GameLevel.cpp(68,26): warning C4305: '-=': truncation from 'double' to 'float'
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\GameLevel.cpp(72,26): warning C4305: '+=': truncation from 'double' to 'float'
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\GameLevel.cpp(77,26): warning C4305: '-=': truncation from 'double' to 'float'
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\GameLevel.cpp(81,26): warning C4305: '+=': truncation from 'double' to 'float'
+C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\GameLevel.cpp(47,46): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\GameLevel.cpp(47,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   GameObject.cpp
 C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\GameObject.cpp(35,21): warning C4018: '<': signed/unsigned mismatch
   Moon.cpp
 C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Moon.cpp(8,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
 C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Moon.cpp(32,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Moon.cpp(56,21): warning C4305: '-=': truncation from 'double' to 'float'
   Player.cpp
 C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Player.cpp(15,45): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   Ring.cpp
@@ -29,8 +22,9 @@ C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Skybox.cpp(8,12
 C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Skybox.cpp(39,21): warning C4018: '<': signed/unsigned mismatch
   Source.cpp
 C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Source.cpp(7,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Source.cpp(182,25): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Source.cpp(183,46): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Source.cpp(183,25): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Source.cpp(184,46): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+  Texture2D.cpp
   Tree.cpp
 C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Tree.cpp(8,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
 C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Tree.cpp(35,21): warning C4018: '<': signed/unsigned mismatch
@@ -44,6 +38,7 @@ C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\objLoader.cpp(1
 LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/FORCE' specification
 GameLevel.obj : warning LNK4006: "struct Vector3 __cdecl Algorithm::operator*(float const &,struct Vector3 const &)" (??DAlgorithm@@YA?AUVector3@@ABMABU1@@Z) already defined in Floor.obj; second definition ignored
 GameLevel.obj : warning LNK4006: "float __cdecl Math::AngleBetweenVectors(struct Vector3,struct Vector3)" (?AngleBetweenVectors@Math@@YAMUVector3@@0@Z) already defined in Floor.obj; second definition ignored
+GameLevel.obj : warning LNK4006: "bool __cdecl CollisionCheck(struct CollisionBox &,struct CollisionBox &,struct Vector3,struct Vector3)" (?CollisionCheck@@YA_NAAUCollisionBox@@0UVector3@@1@Z) already defined in Floor.obj; second definition ignored
 GameLevel.obj : warning LNK4006: "struct Vector3 __cdecl Math::CrossProduct(struct Vector3,struct Vector3)" (?CrossProduct@Math@@YA?AUVector3@@U2@0@Z) already defined in Floor.obj; second definition ignored
 GameLevel.obj : warning LNK4006: "float __cdecl Math::DotProduct(struct Vector3,struct Vector3)" (?DotProduct@Math@@YAMUVector3@@0@Z) already defined in Floor.obj; second definition ignored
 GameLevel.obj : warning LNK4006: "struct Vector3 __cdecl Algorithm::GenerateTriangleNormal(struct Vector3,struct Vector3,struct Vector3)" (?GenerateTriangleNormal@Algorithm@@YA?AUVector3@@U2@00@Z) already defined in Floor.obj; second definition ignored
@@ -53,6 +48,7 @@ GameLevel.obj : warning LNK4006: "struct Vector3 __cdecl Math::ProjectionCalcula
 GameLevel.obj : warning LNK4006: "bool __cdecl Algorithm::SameSide(struct Vector3,struct Vector3,struct Vector3,struct Vector3)" (?SameSide@Algorithm@@YA_NUVector3@@000@Z) already defined in Floor.obj; second definition ignored
 GameObject.obj : warning LNK4006: "struct Vector3 __cdecl Algorithm::operator*(float const &,struct Vector3 const &)" (??DAlgorithm@@YA?AUVector3@@ABMABU1@@Z) already defined in Floor.obj; second definition ignored
 GameObject.obj : warning LNK4006: "float __cdecl Math::AngleBetweenVectors(struct Vector3,struct Vector3)" (?AngleBetweenVectors@Math@@YAMUVector3@@0@Z) already defined in Floor.obj; second definition ignored
+GameObject.obj : warning LNK4006: "bool __cdecl CollisionCheck(struct CollisionBox &,struct CollisionBox &,struct Vector3,struct Vector3)" (?CollisionCheck@@YA_NAAUCollisionBox@@0UVector3@@1@Z) already defined in Floor.obj; second definition ignored
 GameObject.obj : warning LNK4006: "struct Vector3 __cdecl Math::CrossProduct(struct Vector3,struct Vector3)" (?CrossProduct@Math@@YA?AUVector3@@U2@0@Z) already defined in Floor.obj; second definition ignored
 GameObject.obj : warning LNK4006: "float __cdecl Math::DotProduct(struct Vector3,struct Vector3)" (?DotProduct@Math@@YAMUVector3@@0@Z) already defined in Floor.obj; second definition ignored
 GameObject.obj : warning LNK4006: "struct Vector3 __cdecl Algorithm::GenerateTriangleNormal(struct Vector3,struct Vector3,struct Vector3)" (?GenerateTriangleNormal@Algorithm@@YA?AUVector3@@U2@00@Z) already defined in Floor.obj; second definition ignored
@@ -62,6 +58,7 @@ GameObject.obj : warning LNK4006: "struct Vector3 __cdecl Math::ProjectionCalcul
 GameObject.obj : warning LNK4006: "bool __cdecl Algorithm::SameSide(struct Vector3,struct Vector3,struct Vector3,struct Vector3)" (?SameSide@Algorithm@@YA_NUVector3@@000@Z) already defined in Floor.obj; second definition ignored
 GLUTCallbacks.obj : warning LNK4006: "struct Vector3 __cdecl Algorithm::operator*(float const &,struct Vector3 const &)" (??DAlgorithm@@YA?AUVector3@@ABMABU1@@Z) already defined in Floor.obj; second definition ignored
 GLUTCallbacks.obj : warning LNK4006: "float __cdecl Math::AngleBetweenVectors(struct Vector3,struct Vector3)" (?AngleBetweenVectors@Math@@YAMUVector3@@0@Z) already defined in Floor.obj; second definition ignored
+GLUTCallbacks.obj : warning LNK4006: "bool __cdecl CollisionCheck(struct CollisionBox &,struct CollisionBox &,struct Vector3,struct Vector3)" (?CollisionCheck@@YA_NAAUCollisionBox@@0UVector3@@1@Z) already defined in Floor.obj; second definition ignored
 GLUTCallbacks.obj : warning LNK4006: "struct Vector3 __cdecl Math::CrossProduct(struct Vector3,struct Vector3)" (?CrossProduct@Math@@YA?AUVector3@@U2@0@Z) already defined in Floor.obj; second definition ignored
 GLUTCallbacks.obj : warning LNK4006: "float __cdecl Math::DotProduct(struct Vector3,struct Vector3)" (?DotProduct@Math@@YAMUVector3@@0@Z) already defined in Floor.obj; second definition ignored
 GLUTCallbacks.obj : warning LNK4006: "struct Vector3 __cdecl Algorithm::GenerateTriangleNormal(struct Vector3,struct Vector3,struct Vector3)" (?GenerateTriangleNormal@Algorithm@@YA?AUVector3@@U2@00@Z) already defined in Floor.obj; second definition ignored
@@ -71,6 +68,7 @@ GLUTCallbacks.obj : warning LNK4006: "struct Vector3 __cdecl Math::ProjectionCal
 GLUTCallbacks.obj : warning LNK4006: "bool __cdecl Algorithm::SameSide(struct Vector3,struct Vector3,struct Vector3,struct Vector3)" (?SameSide@Algorithm@@YA_NUVector3@@000@Z) already defined in Floor.obj; second definition ignored
 Moon.obj : warning LNK4006: "struct Vector3 __cdecl Algorithm::operator*(float const &,struct Vector3 const &)" (??DAlgorithm@@YA?AUVector3@@ABMABU1@@Z) already defined in Floor.obj; second definition ignored
 Moon.obj : warning LNK4006: "float __cdecl Math::AngleBetweenVectors(struct Vector3,struct Vector3)" (?AngleBetweenVectors@Math@@YAMUVector3@@0@Z) already defined in Floor.obj; second definition ignored
+Moon.obj : warning LNK4006: "bool __cdecl CollisionCheck(struct CollisionBox &,struct CollisionBox &,struct Vector3,struct Vector3)" (?CollisionCheck@@YA_NAAUCollisionBox@@0UVector3@@1@Z) already defined in Floor.obj; second definition ignored
 Moon.obj : warning LNK4006: "struct Vector3 __cdecl Math::CrossProduct(struct Vector3,struct Vector3)" (?CrossProduct@Math@@YA?AUVector3@@U2@0@Z) already defined in Floor.obj; second definition ignored
 Moon.obj : warning LNK4006: "float __cdecl Math::DotProduct(struct Vector3,struct Vector3)" (?DotProduct@Math@@YAMUVector3@@0@Z) already defined in Floor.obj; second definition ignored
 Moon.obj : warning LNK4006: "struct Vector3 __cdecl Algorithm::GenerateTriangleNormal(struct Vector3,struct Vector3,struct Vector3)" (?GenerateTriangleNormal@Algorithm@@YA?AUVector3@@U2@00@Z) already defined in Floor.obj; second definition ignored
@@ -80,6 +78,7 @@ Moon.obj : warning LNK4006: "struct Vector3 __cdecl Math::ProjectionCalculation(
 Moon.obj : warning LNK4006: "bool __cdecl Algorithm::SameSide(struct Vector3,struct Vector3,struct Vector3,struct Vector3)" (?SameSide@Algorithm@@YA_NUVector3@@000@Z) already defined in Floor.obj; second definition ignored
 objLoader.obj : warning LNK4006: "struct Vector3 __cdecl Algorithm::operator*(float const &,struct Vector3 const &)" (??DAlgorithm@@YA?AUVector3@@ABMABU1@@Z) already defined in Floor.obj; second definition ignored
 objLoader.obj : warning LNK4006: "float __cdecl Math::AngleBetweenVectors(struct Vector3,struct Vector3)" (?AngleBetweenVectors@Math@@YAMUVector3@@0@Z) already defined in Floor.obj; second definition ignored
+objLoader.obj : warning LNK4006: "bool __cdecl CollisionCheck(struct CollisionBox &,struct CollisionBox &,struct Vector3,struct Vector3)" (?CollisionCheck@@YA_NAAUCollisionBox@@0UVector3@@1@Z) already defined in Floor.obj; second definition ignored
 objLoader.obj : warning LNK4006: "struct Vector3 __cdecl Math::CrossProduct(struct Vector3,struct Vector3)" (?CrossProduct@Math@@YA?AUVector3@@U2@0@Z) already defined in Floor.obj; second definition ignored
 objLoader.obj : warning LNK4006: "float __cdecl Math::DotProduct(struct Vector3,struct Vector3)" (?DotProduct@Math@@YAMUVector3@@0@Z) already defined in Floor.obj; second definition ignored
 objLoader.obj : warning LNK4006: "struct Vector3 __cdecl Algorithm::GenerateTriangleNormal(struct Vector3,struct Vector3,struct Vector3)" (?GenerateTriangleNormal@Algorithm@@YA?AUVector3@@U2@00@Z) already defined in Floor.obj; second definition ignored
@@ -89,6 +88,7 @@ objLoader.obj : warning LNK4006: "struct Vector3 __cdecl Math::ProjectionCalcula
 objLoader.obj : warning LNK4006: "bool __cdecl Algorithm::SameSide(struct Vector3,struct Vector3,struct Vector3,struct Vector3)" (?SameSide@Algorithm@@YA_NUVector3@@000@Z) already defined in Floor.obj; second definition ignored
 Player.obj : warning LNK4006: "struct Vector3 __cdecl Algorithm::operator*(float const &,struct Vector3 const &)" (??DAlgorithm@@YA?AUVector3@@ABMABU1@@Z) already defined in Floor.obj; second definition ignored
 Player.obj : warning LNK4006: "float __cdecl Math::AngleBetweenVectors(struct Vector3,struct Vector3)" (?AngleBetweenVectors@Math@@YAMUVector3@@0@Z) already defined in Floor.obj; second definition ignored
+Player.obj : warning LNK4006: "bool __cdecl CollisionCheck(struct CollisionBox &,struct CollisionBox &,struct Vector3,struct Vector3)" (?CollisionCheck@@YA_NAAUCollisionBox@@0UVector3@@1@Z) already defined in Floor.obj; second definition ignored
 Player.obj : warning LNK4006: "struct Vector3 __cdecl Math::CrossProduct(struct Vector3,struct Vector3)" (?CrossProduct@Math@@YA?AUVector3@@U2@0@Z) already defined in Floor.obj; second definition ignored
 Player.obj : warning LNK4006: "float __cdecl Math::DotProduct(struct Vector3,struct Vector3)" (?DotProduct@Math@@YAMUVector3@@0@Z) already defined in Floor.obj; second definition ignored
 Player.obj : warning LNK4006: "struct Vector3 __cdecl Algorithm::GenerateTriangleNormal(struct Vector3,struct Vector3,struct Vector3)" (?GenerateTriangleNormal@Algorithm@@YA?AUVector3@@U2@00@Z) already defined in Floor.obj; second definition ignored
@@ -98,6 +98,7 @@ Player.obj : warning LNK4006: "struct Vector3 __cdecl Math::ProjectionCalculatio
 Player.obj : warning LNK4006: "bool __cdecl Algorithm::SameSide(struct Vector3,struct Vector3,struct Vector3,struct Vector3)" (?SameSide@Algorithm@@YA_NUVector3@@000@Z) already defined in Floor.obj; second definition ignored
 Ring.obj : warning LNK4006: "struct Vector3 __cdecl Algorithm::operator*(float const &,struct Vector3 const &)" (??DAlgorithm@@YA?AUVector3@@ABMABU1@@Z) already defined in Floor.obj; second definition ignored
 Ring.obj : warning LNK4006: "float __cdecl Math::AngleBetweenVectors(struct Vector3,struct Vector3)" (?AngleBetweenVectors@Math@@YAMUVector3@@0@Z) already defined in Floor.obj; second definition ignored
+Ring.obj : warning LNK4006: "bool __cdecl CollisionCheck(struct CollisionBox &,struct CollisionBox &,struct Vector3,struct Vector3)" (?CollisionCheck@@YA_NAAUCollisionBox@@0UVector3@@1@Z) already defined in Floor.obj; second definition ignored
 Ring.obj : warning LNK4006: "struct Vector3 __cdecl Math::CrossProduct(struct Vector3,struct Vector3)" (?CrossProduct@Math@@YA?AUVector3@@U2@0@Z) already defined in Floor.obj; second definition ignored
 Ring.obj : warning LNK4006: "float __cdecl Math::DotProduct(struct Vector3,struct Vector3)" (?DotProduct@Math@@YAMUVector3@@0@Z) already defined in Floor.obj; second definition ignored
 Ring.obj : warning LNK4006: "struct Vector3 __cdecl Algorithm::GenerateTriangleNormal(struct Vector3,struct Vector3,struct Vector3)" (?GenerateTriangleNormal@Algorithm@@YA?AUVector3@@U2@00@Z) already defined in Floor.obj; second definition ignored
@@ -107,6 +108,7 @@ Ring.obj : warning LNK4006: "struct Vector3 __cdecl Math::ProjectionCalculation(
 Ring.obj : warning LNK4006: "bool __cdecl Algorithm::SameSide(struct Vector3,struct Vector3,struct Vector3,struct Vector3)" (?SameSide@Algorithm@@YA_NUVector3@@000@Z) already defined in Floor.obj; second definition ignored
 Skybox.obj : warning LNK4006: "struct Vector3 __cdecl Algorithm::operator*(float const &,struct Vector3 const &)" (??DAlgorithm@@YA?AUVector3@@ABMABU1@@Z) already defined in Floor.obj; second definition ignored
 Skybox.obj : warning LNK4006: "float __cdecl Math::AngleBetweenVectors(struct Vector3,struct Vector3)" (?AngleBetweenVectors@Math@@YAMUVector3@@0@Z) already defined in Floor.obj; second definition ignored
+Skybox.obj : warning LNK4006: "bool __cdecl CollisionCheck(struct CollisionBox &,struct CollisionBox &,struct Vector3,struct Vector3)" (?CollisionCheck@@YA_NAAUCollisionBox@@0UVector3@@1@Z) already defined in Floor.obj; second definition ignored
 Skybox.obj : warning LNK4006: "struct Vector3 __cdecl Math::CrossProduct(struct Vector3,struct Vector3)" (?CrossProduct@Math@@YA?AUVector3@@U2@0@Z) already defined in Floor.obj; second definition ignored
 Skybox.obj : warning LNK4006: "float __cdecl Math::DotProduct(struct Vector3,struct Vector3)" (?DotProduct@Math@@YAMUVector3@@0@Z) already defined in Floor.obj; second definition ignored
 Skybox.obj : warning LNK4006: "struct Vector3 __cdecl Algorithm::GenerateTriangleNormal(struct Vector3,struct Vector3,struct Vector3)" (?GenerateTriangleNormal@Algorithm@@YA?AUVector3@@U2@00@Z) already defined in Floor.obj; second definition ignored
@@ -116,6 +118,7 @@ Skybox.obj : warning LNK4006: "struct Vector3 __cdecl Math::ProjectionCalculatio
 Skybox.obj : warning LNK4006: "bool __cdecl Algorithm::SameSide(struct Vector3,struct Vector3,struct Vector3,struct Vector3)" (?SameSide@Algorithm@@YA_NUVector3@@000@Z) already defined in Floor.obj; second definition ignored
 Source.obj : warning LNK4006: "struct Vector3 __cdecl Algorithm::operator*(float const &,struct Vector3 const &)" (??DAlgorithm@@YA?AUVector3@@ABMABU1@@Z) already defined in Floor.obj; second definition ignored
 Source.obj : warning LNK4006: "float __cdecl Math::AngleBetweenVectors(struct Vector3,struct Vector3)" (?AngleBetweenVectors@Math@@YAMUVector3@@0@Z) already defined in Floor.obj; second definition ignored
+Source.obj : warning LNK4006: "bool __cdecl CollisionCheck(struct CollisionBox &,struct CollisionBox &,struct Vector3,struct Vector3)" (?CollisionCheck@@YA_NAAUCollisionBox@@0UVector3@@1@Z) already defined in Floor.obj; second definition ignored
 Source.obj : warning LNK4006: "struct Vector3 __cdecl Math::CrossProduct(struct Vector3,struct Vector3)" (?CrossProduct@Math@@YA?AUVector3@@U2@0@Z) already defined in Floor.obj; second definition ignored
 Source.obj : warning LNK4006: "float __cdecl Math::DotProduct(struct Vector3,struct Vector3)" (?DotProduct@Math@@YAMUVector3@@0@Z) already defined in Floor.obj; second definition ignored
 Source.obj : warning LNK4006: "struct Vector3 __cdecl Algorithm::GenerateTriangleNormal(struct Vector3,struct Vector3,struct Vector3)" (?GenerateTriangleNormal@Algorithm@@YA?AUVector3@@U2@00@Z) already defined in Floor.obj; second definition ignored
@@ -125,6 +128,7 @@ Source.obj : warning LNK4006: "struct Vector3 __cdecl Math::ProjectionCalculatio
 Source.obj : warning LNK4006: "bool __cdecl Algorithm::SameSide(struct Vector3,struct Vector3,struct Vector3,struct Vector3)" (?SameSide@Algorithm@@YA_NUVector3@@000@Z) already defined in Floor.obj; second definition ignored
 Texture2D.obj : warning LNK4006: "struct Vector3 __cdecl Algorithm::operator*(float const &,struct Vector3 const &)" (??DAlgorithm@@YA?AUVector3@@ABMABU1@@Z) already defined in Floor.obj; second definition ignored
 Texture2D.obj : warning LNK4006: "float __cdecl Math::AngleBetweenVectors(struct Vector3,struct Vector3)" (?AngleBetweenVectors@Math@@YAMUVector3@@0@Z) already defined in Floor.obj; second definition ignored
+Texture2D.obj : warning LNK4006: "bool __cdecl CollisionCheck(struct CollisionBox &,struct CollisionBox &,struct Vector3,struct Vector3)" (?CollisionCheck@@YA_NAAUCollisionBox@@0UVector3@@1@Z) already defined in Floor.obj; second definition ignored
 Texture2D.obj : warning LNK4006: "struct Vector3 __cdecl Math::CrossProduct(struct Vector3,struct Vector3)" (?CrossProduct@Math@@YA?AUVector3@@U2@0@Z) already defined in Floor.obj; second definition ignored
 Texture2D.obj : warning LNK4006: "float __cdecl Math::DotProduct(struct Vector3,struct Vector3)" (?DotProduct@Math@@YAMUVector3@@0@Z) already defined in Floor.obj; second definition ignored
 Texture2D.obj : warning LNK4006: "struct Vector3 __cdecl Algorithm::GenerateTriangleNormal(struct Vector3,struct Vector3,struct Vector3)" (?GenerateTriangleNormal@Algorithm@@YA?AUVector3@@U2@00@Z) already defined in Floor.obj; second definition ignored
@@ -134,6 +138,7 @@ Texture2D.obj : warning LNK4006: "struct Vector3 __cdecl Math::ProjectionCalcula
 Texture2D.obj : warning LNK4006: "bool __cdecl Algorithm::SameSide(struct Vector3,struct Vector3,struct Vector3,struct Vector3)" (?SameSide@Algorithm@@YA_NUVector3@@000@Z) already defined in Floor.obj; second definition ignored
 Tree.obj : warning LNK4006: "struct Vector3 __cdecl Algorithm::operator*(float const &,struct Vector3 const &)" (??DAlgorithm@@YA?AUVector3@@ABMABU1@@Z) already defined in Floor.obj; second definition ignored
 Tree.obj : warning LNK4006: "float __cdecl Math::AngleBetweenVectors(struct Vector3,struct Vector3)" (?AngleBetweenVectors@Math@@YAMUVector3@@0@Z) already defined in Floor.obj; second definition ignored
+Tree.obj : warning LNK4006: "bool __cdecl CollisionCheck(struct CollisionBox &,struct CollisionBox &,struct Vector3,struct Vector3)" (?CollisionCheck@@YA_NAAUCollisionBox@@0UVector3@@1@Z) already defined in Floor.obj; second definition ignored
 Tree.obj : warning LNK4006: "struct Vector3 __cdecl Math::CrossProduct(struct Vector3,struct Vector3)" (?CrossProduct@Math@@YA?AUVector3@@U2@0@Z) already defined in Floor.obj; second definition ignored
 Tree.obj : warning LNK4006: "float __cdecl Math::DotProduct(struct Vector3,struct Vector3)" (?DotProduct@Math@@YAMUVector3@@0@Z) already defined in Floor.obj; second definition ignored
 Tree.obj : warning LNK4006: "struct Vector3 __cdecl Algorithm::GenerateTriangleNormal(struct Vector3,struct Vector3,struct Vector3)" (?GenerateTriangleNormal@Algorithm@@YA?AUVector3@@U2@00@Z) already defined in Floor.obj; second definition ignored

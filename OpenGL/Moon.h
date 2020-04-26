@@ -15,4 +15,5 @@ public:
 	virtual void Update();
 	void SetRotation(float newX, float newY, float newZ);
 	void SetPosition(float newX, float newY, float newZ);
+	float GetYPosition();
 };

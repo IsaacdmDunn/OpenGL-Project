@@ -10,3 +10,7 @@
 //level dimensions
 #define LEVEL_WIDTH		200
 #define LEVEL_LENGTH	200
+
+//player movement
+#define MOVEMENT_SPEED	1.1f
+#define TURING_SPEED	2.1f

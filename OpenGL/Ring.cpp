@@ -46,3 +46,11 @@ void Ring::SetPosition(float newX, float newY, float newZ)
 {
 	GameObject::SetPosition(newX, newY, newZ);
 }
+
+Vector3 Ring::GetPosition()
+{
+	return _position.x, _position.y, _position.z; 
+}
+Vector3 Ring::GetRotation() {
+	return _rotation.x, _rotation.y, _rotation.z; 
+}

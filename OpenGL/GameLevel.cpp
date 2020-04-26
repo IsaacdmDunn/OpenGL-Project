@@ -36,6 +36,22 @@ void GameLevel::Update()
 	_Floor->Update();
 	_Ring->Update();
 	_Moon->Update();
+
+
+	
+	if (CollisionCheck(*_Player->_CollisionBox, *_Ring->_CollisionBox, _Player->GetPosition(), _Ring->GetPosition()) == true)
+	{
+		std::cout << CollisionCheck(*_Player->_CollisionBox, *_Ring->_CollisionBox, _Player->GetPosition(), _Ring->GetPosition()) << " Ring: X" << _Ring->GetPosition().x << "Z" << _Ring->GetPosition().y << " Player: X" << _Player->GetPosition().x << "Y" << _Player->GetPosition().y << std::endl;
+
+
+		_Ring->SetPosition(rand() % 100, 5, rand() % 100);
+	}
+	
+	//if moon hits the floor
+	if (_Moon->GetYPosition() < 100.0f)
+	{
+		std::cout << "oh shit oh fuck majora no!!!" << std::endl;
+	}
 }
 
 //update keybpard inputs
@@ -47,38 +63,38 @@ void GameLevel::Keyboard(unsigned char key, int x, int y)
 	//moves camera with WASD controls
 	if (key == 'd')
 	{
-		playerPosition.x -= 1.1;
+		playerPosition.x -= MOVEMENT_SPEED;
 
 	}
 	else if (key == 'a')
 	{
-		playerPosition.x += 1.1;
+		playerPosition.x += MOVEMENT_SPEED;
 	}
 	if (key == 'w')
 	{
-		playerPosition.z += 1.1;
+		playerPosition.z += MOVEMENT_SPEED;
 	}
 	else if (key == 's')
 	{
-		playerPosition.z -= 1.1;
+		playerPosition.z -= MOVEMENT_SPEED;
 	}
 	//rotates camera with Q for left and E for right
 	if (key == 'q')
 	{
-		playerRotation.y -= 2.1;
+		playerRotation.y -= TURING_SPEED;
 	}
 	else if (key == 'e')
 	{
-		playerRotation.y += 2.1;
+		playerRotation.y += TURING_SPEED;
 	}
 	//rotates camera with Q for left and E for right
 	if (key == 'r')
 	{
-		playerRotation.x -= 2.1;
+		playerRotation.x -= TURING_SPEED;
 	}
 	else if (key == 'f')
 	{
-		playerRotation.x += 2.1;
+		playerRotation.x += TURING_SPEED;
 	}
 
 	//sets the position and rotation for the player

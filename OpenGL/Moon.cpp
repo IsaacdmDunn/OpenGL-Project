@@ -53,7 +53,7 @@ void Moon::Draw()
 
 void Moon::Update()
 {
-	_position.y -= 0.02;
+	//_position.y -= 0.02;
 }
 
 void Moon::SetRotation(float newX, float newY, float newZ)
@@ -64,4 +64,9 @@ void Moon::SetRotation(float newX, float newY, float newZ)
 void Moon::SetPosition(float newX, float newY, float newZ)
 {
 	GameObject::SetPosition(newX, newY, newZ);
+}
+
+float Moon::GetYPosition()
+{ 
+	return _position.y; 
 }
