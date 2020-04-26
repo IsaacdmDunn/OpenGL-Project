@@ -53,7 +53,7 @@ void Moon::Draw()
 
 void Moon::Update()
 {
-	//_position.y -= 0.02;
+	_position.y -= 0.02;
 }
 
 void Moon::SetRotation(float newX, float newY, float newZ)

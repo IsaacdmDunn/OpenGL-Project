@@ -2,7 +2,7 @@
 
 //libraries
 #include "objLoader.h"
-#include "Tree.h"
+#include "PlayerObject.h"
 
 //player class inherits from gameobject
 class Player : GameObject
@@ -11,7 +11,7 @@ class Player : GameObject
 private:
 	//player objects
 	Camera* _Camera;
-	Tree* _PlayerObject;
+	PlayerObject* _PlayerObject;
 //public
 public:
 	Player(float x, float y, float z, Vector3 rotation);
@@ -21,10 +21,15 @@ public:
 	virtual void Update();
 
 	void SetPosition(float newX, float newY, float newZ);
-	Vector3 GetPosition() { return _position.x, _position.y, _position.z; }
-
 	void SetRotation(float newX, float newY, float newZ);
-	Vector3 GetRotation() { return _rotation.x, _rotation.y, _rotation.z; }
+
+	Vector3 GetPosition();
+	Vector3 GetRotation();
 
 	CollisionBox* _CollisionBox;
+};
+
+struct PlayerNode 
+{
+
 };

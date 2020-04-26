@@ -133,6 +133,7 @@
     <ClInclude Include="Moon.h" />
     <ClInclude Include="objLoader.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="PlayerObject.h" />
     <ClInclude Include="Ring.h" />
     <ClInclude Include="SceneObject.h" />
     <ClInclude Include="Skybox.h" />
@@ -150,6 +151,7 @@
     <ClCompile Include="Moon.cpp" />
     <ClCompile Include="objLoader.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayerObject.cpp" />
     <ClCompile Include="Ring.cpp" />
     <ClCompile Include="SceneObject.cpp" />
     <ClCompile Include="Skybox.cpp" />

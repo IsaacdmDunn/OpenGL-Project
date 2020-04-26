@@ -332,8 +332,8 @@ bool CollisionCheck(CollisionBox &collisionBox1, CollisionBox &collisionBox2, Ve
 	//bounding box for object 1
 	float minAX = position1.x;
 	float maxAX = position1.x + collisionBox1.objectDimenions.x;
-	float minAY = position1.y;	 
-	float maxAY = position1.y + collisionBox1.objectDimenions.y;
+	float minAY = -position1.y;	 
+	float maxAY = -position1.y + collisionBox1.objectDimenions.y;
 	float minAZ = position1.z;	 
 	float maxAZ = position1.z + collisionBox1.objectDimenions.z;
 

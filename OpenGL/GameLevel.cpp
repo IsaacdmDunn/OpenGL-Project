@@ -4,16 +4,18 @@
 //constructor
 GameLevel::GameLevel()
 {
+	gameIntroText = "It hungers...";
 }
 
 //destructor
 GameLevel::~GameLevel()
 {
-	for (int i = 0; i < TREECOUNT; i++)
+	/*for (int i = 0; i < TREECOUNT; i++)
 	{
 		_Tree[i] = NULL;
 	}
-	delete[] _Tree;
+	delete[] _Tree;*/
+	_Trees.clear();
 	for (int i = 0; i < SKYBOX_PLANES; i++)
 	{
 		_Skybox[i] = NULL;
@@ -29,10 +31,17 @@ void GameLevel::Update()
 {
 	//update game objects
 	_Player->Update();
-	for (int i = 0; i < TREECOUNT; i++)
+
+	//if trees are in vector
+	if (!_Trees.empty())
 	{
-		_Tree[i]->Update();
+		//draw each tree
+		for (unsigned int i = 0; i < _Trees.size(); i++)
+		{
+			_Trees[i]->Update();
+		}
 	}
+
 	_Floor->Update();
 	_Ring->Update();
 	_Moon->Update();
@@ -45,13 +54,23 @@ void GameLevel::Update()
 
 
 		_Ring->SetPosition(rand() % 100, 5, rand() % 100);
+		_Moon->SetPosition(0, 5 + _Moon->GetYPosition(), 0);
+		_Score++;
 	}
 	
+	std::cout << _Moon->GetYPosition() << std::endl;
+
 	//if moon hits the floor
-	if (_Moon->GetYPosition() < 100.0f)
+	if (_Moon->GetYPosition() < MOON_DESTINATION)
 	{
-		std::cout << "oh shit oh fuck majora no!!!" << std::endl;
+		
+		gameIntroText = "Your sacriface is inexcusable and your fate has been sealed";
 	}
+	else if (_Moon->GetYPosition() < MOON_TEXT_REMOVE)
+	{
+		gameIntroText = " ";
+	}
+	
 }
 
 //update keybpard inputs
@@ -111,6 +130,29 @@ void GameLevel::Keyboard(unsigned char key, int x, int y)
 //renders level
 void GameLevel::Render()
 {
+	//clear buffer
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+	//draws background outside skybox 
+	DisableProjectedView();
+	glBindTexture(GL_TEXTURE_2D, _BackgroundTexture->GetID());
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glEnable(GL_TEXTURE_COORD_ARRAY);
+	glBegin(GL_QUADS);
+	glColor3f(1.0f, 1.0f, 1.0f);
+	glTexCoord2i(0, 0);
+	glVertex2i(-1, -1);
+	glTexCoord2i(1, 0);
+	glVertex2i(1, -1);
+	glTexCoord2i(1, 1);
+	glVertex2i(1, 1);
+	glTexCoord2i(0, 1);
+	glVertex2i(-1, 1);
+	glEnd();
+	glDisable(GL_TEXTURE_COORD_ARRAY);
+	EnableProjectedView();
+
 	//skybox drawn with stars.raw
 	for (int i = 0; i < SKYBOX_PLANES; i++)
 	{
@@ -120,15 +162,42 @@ void GameLevel::Render()
 	//no texture
 	glBindTexture(GL_TEXTURE_2D, 0);
 	
-	for (int i = 0; i < TREECOUNT; i++)
+	//if trees are in vector
+	if (!_Trees.empty())
 	{
-		_Tree[i]->Draw();
+		//draw each tree
+		for (unsigned int i = 0; i < _Trees.size(); i++)
+		{
+			_Trees[i]->Draw();
+		}
 	}
 
 	_Floor->Draw();
 	_Ring->Draw();
 	_Moon->Draw();
 	_Player->Draw();
+
+	//render HUD
+	glBindTexture(GL_TEXTURE_2D, 0);
+	DisableProjectedView();
+	scoreText = "Score: " + std::to_string(_Score);
+	//gameIntroText = "It hungers...";
+	//score text
+	glPushMatrix();
+	glRasterPos2f(-0.95f, 0.9f); //Sets the texts position in relation to NDC (Normalized Device Coordinates [-1 to 1])
+	glutBitmapString(GLUT_BITMAP_TIMES_ROMAN_24, (unsigned char*)scoreText.c_str()); //Sets the font and the text
+	glPopMatrix();
+
+	//intro text
+	glPushMatrix();
+	glRasterPos2f(-0.50f, 0.0f); //Sets the texts position in relation to NDC (Normalized Device Coordinates [-1 to 1])
+	glutBitmapString(GLUT_BITMAP_TIMES_ROMAN_24, (unsigned char*)gameIntroText.c_str()); //Sets the font and the text
+	glPopMatrix();
+	EnableProjectedView();
+
+	//ends render
+	glFlush();
+	glutSwapBuffers();
 }
 
 //initialises objects
@@ -139,36 +208,12 @@ void GameLevel::InitObjects()
 	_Player->Load();
 
 	//trees
-	_Tree[0] = new Tree(0, -0.5, 0, Vector3(0, 0, 0));
-	_Tree[0]->Load();
-	_Tree[1] = new Tree(-120, -0.5, -5, Vector3(0, 0, 0));
-	_Tree[1]->Load();
-	_Tree[2] = new Tree(-24, -0.5, -2, Vector3(0, 0, 0));
-	_Tree[2]->Load();
-	_Tree[3] = new Tree(30, -0.5, -4, Vector3(0, 0, 0));
-	_Tree[3]->Load();				  
-	_Tree[4] = new Tree(5, -0.5, -10, Vector3(0, 0, 0));
-	_Tree[4]->Load();
-	_Tree[5] = new Tree(16, -0.5, -15, Vector3(0, 0, 0));
-	_Tree[5]->Load();
-	_Tree[6] = new Tree(-18, -0.5, -14, Vector3(0, 0, 0));
-	_Tree[6]->Load();
-	_Tree[7] = new Tree(-35, -0.5, -12, Vector3(0, 0, 0));
-	_Tree[7]->Load();
-	_Tree[8] = new Tree(10, -0.5, -19, Vector3(0, 0, 0));
-	_Tree[8]->Load();
-	_Tree[9] = new Tree(9, -0.5, -25, Vector3(0, 0, 0));
-	_Tree[9]->Load();
-	_Tree[10] = new Tree(33, -0.5, -22, Vector3(0, 0, 0));
-	_Tree[10]->Load();
-	_Tree[11] = new Tree(-11, -0.5, -30, Vector3(0, 0, 0));
-	_Tree[11]->Load();
-	_Tree[12] = new Tree(-33, -0.5, -32, Vector3(0, 0, 0));
-	_Tree[12]->Load();
-	_Tree[13] = new Tree(22, -0.5, -19, Vector3(0, 0, 0));
-	_Tree[13]->Load();
-	_Tree[14] = new Tree(15, -0.5, -20, Vector3(0, 0, 0));
-	_Tree[14]->Load();
+	for (int i = 0; i < TREECOUNT; i++)
+	{
+		CreateTrees();
+		_Tree->Load();
+	}
+	
 
 	//floor
 	_Floor = new Floor(0, -0.5, 0, Vector3(0, 0, 0));
@@ -193,4 +238,46 @@ void GameLevel::InitObjects()
 	_Skybox[3]->Load();
 	_Skybox[4] = new Skybox(-150, 50, 0, Vector3(90, 0, 270));
 	_Skybox[4]->Load();
+
+	//background texture
+	_BackgroundTexture = new Texture2D();
+	_BackgroundTexture->Load((char*)"Assets/stars.raw", 512, 512);
+}
+
+//disables projection allowing 2D objects to be drawn
+void GameLevel::DisableProjectedView()
+{
+	glMatrixMode(GL_PROJECTION);
+	glPushMatrix();
+	glLoadIdentity();
+	glMatrixMode(GL_MODELVIEW);
+	glPushMatrix();
+	glLoadIdentity();
+	glDisable(GL_LIGHTING);
+	glDisable(GL_DEPTH_TEST);
+}
+
+//enables projection allowing 3D objects to be drawn
+void GameLevel::EnableProjectedView()
+{
+	glEnable(GL_DEPTH_TEST);
+	glEnable(GL_LIGHTING);
+	glMatrixMode(GL_PROJECTION);
+	glPopMatrix();
+	glMatrixMode(GL_MODELVIEW);
+	glPopMatrix();
+}
+
+void GameLevel::UpdateTrees()
+{
+}
+
+void GameLevel::RenderTrees()
+{
+}
+
+void GameLevel::CreateTrees()
+{
+	_Tree = new Tree(rand() % 200 - 100, -0.5, rand() % 200 - 100, Vector3(0, rand() % 360, 0));
+	_Trees.push_back(_Tree);
 }

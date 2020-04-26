@@ -1,40 +1,18 @@
-﻿  Floor.cpp
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Floor.cpp(8,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Floor.cpp(27,24): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Floor.cpp(32,21): warning C4018: '<': signed/unsigned mismatch
+﻿  GameLevel.cpp
+C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\GameLevel.cpp(23,18): warning C4154: deletion of an array expression; conversion to pointer supplied
+C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\GameLevel.cpp(56,46): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\GameLevel.cpp(56,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\GameLevel.cpp(281,83): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\GameLevel.cpp(281,58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\GameLevel.cpp(281,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   GLUTCallbacks.cpp
-  GameLevel.cpp
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\GameLevel.cpp(16,16): warning C4154: deletion of an array expression; conversion to pointer supplied
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\GameLevel.cpp(21,18): warning C4154: deletion of an array expression; conversion to pointer supplied
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\GameLevel.cpp(47,46): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\GameLevel.cpp(47,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  GameObject.cpp
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\GameObject.cpp(35,21): warning C4018: '<': signed/unsigned mismatch
-  Moon.cpp
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Moon.cpp(8,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Moon.cpp(32,21): warning C4018: '<': signed/unsigned mismatch
   Player.cpp
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Player.cpp(15,45): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  Ring.cpp
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Ring.cpp(8,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  Skybox.cpp
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Skybox.cpp(8,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Skybox.cpp(39,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Player.cpp(15,53): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   Source.cpp
 C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Source.cpp(7,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Source.cpp(183,25): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Source.cpp(184,46): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
-  Texture2D.cpp
-  Tree.cpp
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Tree.cpp(8,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Tree.cpp(35,21): warning C4018: '<': signed/unsigned mismatch
-  objLoader.cpp
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\objLoader.cpp(128,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\objLoader.cpp(131,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\objLoader.cpp(416,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\objLoader.cpp(509,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Source.cpp(113,25): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\Source.cpp(114,46): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
   Generating Code...
-C:\Users\Mr Poopybutthole\Documents\GitHub\OpenGL-Project\OpenGL\objLoader.cpp(143): warning C4715: 'objLoader::LoadFile': not all control paths return a value
 LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/FORCE' specification
 GameLevel.obj : warning LNK4006: "struct Vector3 __cdecl Algorithm::operator*(float const &,struct Vector3 const &)" (??DAlgorithm@@YA?AUVector3@@ABMABU1@@Z) already defined in Floor.obj; second definition ignored
 GameLevel.obj : warning LNK4006: "float __cdecl Math::AngleBetweenVectors(struct Vector3,struct Vector3)" (?AngleBetweenVectors@Math@@YAMUVector3@@0@Z) already defined in Floor.obj; second definition ignored
@@ -96,6 +74,16 @@ Player.obj : warning LNK4006: "bool __cdecl Algorithm::InTriangle(struct Vector3
 Player.obj : warning LNK4006: "float __cdecl Math::Magnitude(struct Vector3)" (?Magnitude@Math@@YAMUVector3@@@Z) already defined in Floor.obj; second definition ignored
 Player.obj : warning LNK4006: "struct Vector3 __cdecl Math::ProjectionCalculation(struct Vector3,struct Vector3)" (?ProjectionCalculation@Math@@YA?AUVector3@@U2@0@Z) already defined in Floor.obj; second definition ignored
 Player.obj : warning LNK4006: "bool __cdecl Algorithm::SameSide(struct Vector3,struct Vector3,struct Vector3,struct Vector3)" (?SameSide@Algorithm@@YA_NUVector3@@000@Z) already defined in Floor.obj; second definition ignored
+PlayerObject.obj : warning LNK4006: "struct Vector3 __cdecl Algorithm::operator*(float const &,struct Vector3 const &)" (??DAlgorithm@@YA?AUVector3@@ABMABU1@@Z) already defined in Floor.obj; second definition ignored
+PlayerObject.obj : warning LNK4006: "float __cdecl Math::AngleBetweenVectors(struct Vector3,struct Vector3)" (?AngleBetweenVectors@Math@@YAMUVector3@@0@Z) already defined in Floor.obj; second definition ignored
+PlayerObject.obj : warning LNK4006: "bool __cdecl CollisionCheck(struct CollisionBox &,struct CollisionBox &,struct Vector3,struct Vector3)" (?CollisionCheck@@YA_NAAUCollisionBox@@0UVector3@@1@Z) already defined in Floor.obj; second definition ignored
+PlayerObject.obj : warning LNK4006: "struct Vector3 __cdecl Math::CrossProduct(struct Vector3,struct Vector3)" (?CrossProduct@Math@@YA?AUVector3@@U2@0@Z) already defined in Floor.obj; second definition ignored
+PlayerObject.obj : warning LNK4006: "float __cdecl Math::DotProduct(struct Vector3,struct Vector3)" (?DotProduct@Math@@YAMUVector3@@0@Z) already defined in Floor.obj; second definition ignored
+PlayerObject.obj : warning LNK4006: "struct Vector3 __cdecl Algorithm::GenerateTriangleNormal(struct Vector3,struct Vector3,struct Vector3)" (?GenerateTriangleNormal@Algorithm@@YA?AUVector3@@U2@00@Z) already defined in Floor.obj; second definition ignored
+PlayerObject.obj : warning LNK4006: "bool __cdecl Algorithm::InTriangle(struct Vector3,struct Vector3,struct Vector3,struct Vector3)" (?InTriangle@Algorithm@@YA_NUVector3@@000@Z) already defined in Floor.obj; second definition ignored
+PlayerObject.obj : warning LNK4006: "float __cdecl Math::Magnitude(struct Vector3)" (?Magnitude@Math@@YAMUVector3@@@Z) already defined in Floor.obj; second definition ignored
+PlayerObject.obj : warning LNK4006: "struct Vector3 __cdecl Math::ProjectionCalculation(struct Vector3,struct Vector3)" (?ProjectionCalculation@Math@@YA?AUVector3@@U2@0@Z) already defined in Floor.obj; second definition ignored
+PlayerObject.obj : warning LNK4006: "bool __cdecl Algorithm::SameSide(struct Vector3,struct Vector3,struct Vector3,struct Vector3)" (?SameSide@Algorithm@@YA_NUVector3@@000@Z) already defined in Floor.obj; second definition ignored
 Ring.obj : warning LNK4006: "struct Vector3 __cdecl Algorithm::operator*(float const &,struct Vector3 const &)" (??DAlgorithm@@YA?AUVector3@@ABMABU1@@Z) already defined in Floor.obj; second definition ignored
 Ring.obj : warning LNK4006: "float __cdecl Math::AngleBetweenVectors(struct Vector3,struct Vector3)" (?AngleBetweenVectors@Math@@YAMUVector3@@0@Z) already defined in Floor.obj; second definition ignored
 Ring.obj : warning LNK4006: "bool __cdecl CollisionCheck(struct CollisionBox &,struct CollisionBox &,struct Vector3,struct Vector3)" (?CollisionCheck@@YA_NAAUCollisionBox@@0UVector3@@1@Z) already defined in Floor.obj; second definition ignored

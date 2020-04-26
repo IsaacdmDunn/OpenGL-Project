@@ -12,7 +12,7 @@ Player::Player(float x, float y, float z, Vector3 rotation) : GameObject(x, y, z
 	_rotation.z = rotation.z;
 	_Camera = new Camera();
 	_CollisionBox = new CollisionBox(3, 3, 3);
-	_PlayerObject = new Tree(x+5,y,z+5, rand() % 360);
+	_PlayerObject = new PlayerObject(x+5,y,z+5, rand() % 360);
 	_Camera->eye.z = 1.0f;
 	_Camera->up.y = 1.0f;
 }
@@ -40,18 +40,19 @@ void Player::Draw()
 //update player
 void Player::Update()
 {
-	
 	//updates camera position and rotation
 	glLoadIdentity();
-	_PlayerObject->SetPosition(_position.x, _position.y, _position.z);
-	_PlayerObject->Update();
 	
 	gluLookAt(_Camera->eye.x, _Camera->eye.y, _Camera->eye.z, _Camera->center.x, _Camera->center.y, _Camera->center.z, _Camera->up.x, _Camera->up.y, _Camera->up.z);
+	
 	glRotatef(_rotation.x, 1, 0, 0);
 	glRotatef(_rotation.y, 0, 1, 0);
 	glRotatef(_rotation.z, 0, 0, 1);
+
+	_PlayerObject->SetPosition(-_position.x, 6.5, -_position.z - 2);
+	_PlayerObject->SetRotation(_rotation.x, -_rotation.y, _rotation.z);
+	_PlayerObject->Update();
 	glTranslatef(_position.x, _position.y, _position.z);
-	
 }
 
 void Player::SetPosition(float x, float y, float z)
@@ -81,4 +82,14 @@ void Player::SetRotation(float x, float y, float z)
 		_rotation.y += y;
 		_rotation.z += z;
 	}
+}
+
+Vector3 Player::GetPosition()
+{
+	return _position; 
+}
+
+Vector3 Player::GetRotation()
+{
+	return _rotation; 
 }

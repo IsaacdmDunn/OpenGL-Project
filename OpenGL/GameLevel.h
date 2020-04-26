@@ -1,6 +1,7 @@
 #pragma once
 
 //libraries
+#include <vector>
 #include "Player.h"
 #include "Tree.h"
 #include "Ring.h"
@@ -23,10 +24,23 @@ public:
 
 //private
 private:
-	Tree* _Tree[TREECOUNT];
+	Tree* _Tree;
+	std::vector<Tree*> _Trees;
+	
 	Skybox* _Skybox[SKYBOX_PLANES];
 	Ring* _Ring;
 	Moon* _Moon;
 	Floor* _Floor;
 	Player* _Player;
+	Texture2D* _BackgroundTexture;
+
+	int _Score = 0;
+	std::string scoreText;
+	std::string gameIntroText;
+
+	void DisableProjectedView();
+	void EnableProjectedView();
+	void CreateTrees();
+	void UpdateTrees();
+	void RenderTrees();
 };

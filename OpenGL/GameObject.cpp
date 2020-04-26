@@ -54,8 +54,8 @@ void GameObject::Draw()
 void GameObject::SetRotation(float newX, float newY, float newZ)
 {
 	_rotation.x = newX;
-	_position.y = newY;
-	_position.z = newZ;
+	_rotation.y = newY;
+	_rotation.z = newZ;
 }
 
 //sets position of game object

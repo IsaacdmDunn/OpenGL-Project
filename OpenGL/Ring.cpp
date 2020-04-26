@@ -26,7 +26,7 @@ void Ring::Load()
 void Ring::Draw()
 {
 	glPushMatrix();
-	glTranslatef(_position.x, _position.y, _position.z);
+	glTranslatef(-_position.x, _position.y, -_position.z);
 	glRotatef(_rotation.y, 0, 1, 0);
 	glScalef(5, 5, 5);
 	GameObject::Draw();
@@ -49,7 +49,7 @@ void Ring::SetPosition(float newX, float newY, float newZ)
 
 Vector3 Ring::GetPosition()
 {
-	return _position.x, _position.y, _position.z; 
+	return _position; 
 }
 Vector3 Ring::GetRotation() {
 	return _rotation.x, _rotation.y, _rotation.z; 
